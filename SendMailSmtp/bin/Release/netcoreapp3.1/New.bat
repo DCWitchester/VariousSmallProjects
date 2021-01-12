@@ -1,0 +1,1 @@
+SendMailSmtp.exe D:\MailSMTP\mailTest\email.json

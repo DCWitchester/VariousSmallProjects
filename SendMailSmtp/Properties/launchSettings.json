@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SendMailSmtp": {
+      "commandName": "Project",
+      "commandLineArgs": "D:\\MailSMTP\\mailTest\\email.json"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SendMailSmtp</id>
+    <version>1.0.32</version>
+    <authors>SendMailSmtp</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <icon>favicon.ico</icon>
+    <description>This program will send an email from a given JSON file.</description>
+    <copyright>Mentor SRL</copyright>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="Microsoft.Extensions.Configuration" version="3.1.8" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.CommandLine" version="3.1.8" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.EnvironmentVariables" version="3.1.8" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.Json" version="3.1.8" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\MailSMTP\SendMailSmtp\bin\Release\netcoreapp3.1\win-x86\SendMailSmtp.runtimeconfig.json" target="lib\netcoreapp3.1\SendMailSmtp.runtimeconfig.json" />
+    <file src="D:\MailSMTP\SendMailSmtp\bin\Release\netcoreapp3.1\win-x86\SendMailSmtp.dll" target="lib\netcoreapp3.1\SendMailSmtp.dll" />
+    <file src="D:\MailSMTP\SendMailSmtp\favicon.ico" target="favicon.ico" />
+  </files>
+</package>

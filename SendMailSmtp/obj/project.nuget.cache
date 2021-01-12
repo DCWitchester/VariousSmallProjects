@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "2wR7LfFyMXbJ6mQjtTn/wwci5xI3mSMMrZXppXMNl0Nz7SLPmVJQprxpiW6QZRyndgSQMFdHzdot2/FPvciDmg==",
+  "success": true,
+  "projectFilePath": "F:\\VariousProjects\\VariousSmallProjects\\SendMailSmtp\\SendMailSmtp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.8\\microsoft.extensions.configuration.3.1.8.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.8\\microsoft.extensions.configuration.abstractions.3.1.8.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.configuration.commandline\\3.1.8\\microsoft.extensions.configuration.commandline.3.1.8.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.configuration.environmentvariables\\3.1.8\\microsoft.extensions.configuration.environmentvariables.3.1.8.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\3.1.8\\microsoft.extensions.configuration.fileextensions.3.1.8.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.configuration.json\\3.1.8\\microsoft.extensions.configuration.json.3.1.8.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.8\\microsoft.extensions.fileproviders.abstractions.3.1.8.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\3.1.8\\microsoft.extensions.fileproviders.physical.3.1.8.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\3.1.8\\microsoft.extensions.filesystemglobbing.3.1.8.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.8\\microsoft.extensions.primitives.3.1.8.nupkg.sha512"
+  ],
+  "logs": []
+}
