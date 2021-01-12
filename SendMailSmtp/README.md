@@ -14,6 +14,6 @@ Configuration JSON Example:
   "Attachements": [],
   "ParameterValues": [],
   "CC": [],
-  "BCC":[""]
+  "BCC":[]
 }
 ```
