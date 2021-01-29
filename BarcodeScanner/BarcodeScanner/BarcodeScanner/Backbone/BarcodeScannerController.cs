@@ -140,6 +140,13 @@ namespace BarcodeScanner.Backbone
         {
             Preferences.Clear();
         }
+
+        public void ResetInstanceElements()
+        {
+            barcode = new Barcode();
+            products = new ObservableCollection<Products>();
+            entryDocument = new EntryDocument();
+        }
         #endregion
     }
 }

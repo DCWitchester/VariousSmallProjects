@@ -76,19 +76,19 @@ namespace BarcodeScanner.Components
 
         public void SelectPartner(object sender, EventArgs e)
         {
-            instanceController.PageNavigation.PushAsync(new PartnerSelect(instanceController),Animation.IsEnabled);
+            instanceController.PageNavigation.PushModalAsync(new PartnerSelect(instanceController), Animation.IsEnabled);
         }
 
         public void SelectManagementUnit(object sender, EventArgs e)
         {
-            //instanceController.PageNavigation.PushAsync()
+            instanceController.PageNavigation.PushModalAsync(new ManagementUnit(instanceController), Animation.IsEnabled);
         }
         #endregion
 
         #region Functionality
         private void ReturnToMainPage()
         {
-            this.instanceController.PageNavigation.PopAsync(true);
+            this.instanceController.PageNavigation.PopModalAsync(Animation.IsEnabled);
         }
         private void InitializeRefreshAction()
         {

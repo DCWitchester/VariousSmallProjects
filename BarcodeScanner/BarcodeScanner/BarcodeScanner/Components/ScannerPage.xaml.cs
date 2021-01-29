@@ -81,7 +81,7 @@ namespace BarcodeScanner.Components
                 ProductBatchDate = Regex.Replace(date,"[^0-9.]","")
             });
             scanView.IsScanning = true;
-            await instanceController.PageNavigation.PopAsync(true);
+            await instanceController.PageNavigation.PopModalAsync(Animation.IsEnabled);
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace BarcodeScanner.Components
                 ProductCode = result,
                 ProductQuantity = quantity
             });
-            await instanceController.PageNavigation.PopAsync(true);
+            await instanceController.PageNavigation.PopModalAsync(Animation.IsEnabled);
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace BarcodeScanner.Components
         /// <param name="e">the click event</param>
         private void ReturnToMainPage(object sender, EventArgs e)
         {
-            instanceController.PageNavigation.PopAsync(true);
+            instanceController.PageNavigation.PopModalAsync(Animation.IsEnabled);
         }
 
         #endregion

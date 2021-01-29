@@ -43,11 +43,11 @@ namespace BarcodeScanner
             }
             else if (Backbone.BarcodeScannerController.PublicSettings.UseBatches)
             {
-                await Navigation.PushAsync(new Components.StorageServiceWithBatchesPage(instanceController), true);
+                await Navigation.PushModalAsync(new Components.StorageServiceWithBatchesPage(instanceController), Animation.IsEnabled);
             }
             else
             {
-                await Navigation.PushAsync(new Components.StorageServiceWithoutBatchesPage(instanceController), true);
+                await Navigation.PushModalAsync(new Components.StorageServiceWithoutBatchesPage(instanceController), Animation.IsEnabled);
             }
         }
     }
