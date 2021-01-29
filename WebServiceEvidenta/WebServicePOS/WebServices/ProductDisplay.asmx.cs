@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Services;
 using System.Xml;
-using WebServiceEvidenta.VFPClasses;
+using WebServiceEvidenta.VFPClasses.GeneralClasses;
 
 namespace WebServiceEvidenta.WebServices
 {
@@ -18,7 +18,7 @@ namespace WebServiceEvidenta.WebServices
         [WebMethod]
         public XmlDocument GetProductDisplay(String ProductCode)
         {
-            using (ProductDisplayFunctions vfp = new ProductDisplayFunctions())
+            using (ProductFunctions vfp = new ProductFunctions())
             {
                 return vfp.getProductDetails(ProductCode);
             }

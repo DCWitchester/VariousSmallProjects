@@ -1,8 +1,13 @@
-﻿using System;
+﻿using BarcodeScanner.Settings;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Linq;
 using Xamarin.Forms;
+using Xamarin.Essentials;
+using BarcodeScanner.ObjectClasses;
+using Newtonsoft.Json;
 
 namespace BarcodeScanner.Backbone
 {
@@ -10,33 +15,82 @@ namespace BarcodeScanner.Backbone
     {
         #region Properties
 #pragma warning disable IDE1006 // Naming Styles
+        /// <summary>
+        /// the main navigation object
+        /// </summary>
         protected INavigation pageNavigation { get; set; }
 
-        protected ObjectClasses.Barcode barcode { get; set; }
+        /// <summary>
+        /// the initial Barcode Object
+        /// </summary>
+        protected Barcode barcode { get; set; }
 
-        protected ObservableCollection<ObjectClasses.Products> products { get; set; }
+        /// <summary>
+        /// the Observable Collection bound to the Grid item on the main Page
+        /// </summary>
+        protected ObservableCollection<Products> products { get; set; }
+
+        /// <summary>
+        /// the public settings instance for the program
+        /// </summary>
+        protected static PublicSettings defaultSettings { get; set; }
+        /// <summary>
+        /// the user specific settings for the instance
+        /// </summary>
+        protected static PublicSettings userSettings { get; set; } = new PublicSettings();
+        /// <summary>
+        /// the entry document for the instance
+        /// </summary>
+        protected EntryDocument entryDocument { get; set; } = new EntryDocument();
 #pragma warning restore IDE1006 // Naming Styles
 
         #endregion
 
         #region Callers 
+        /// <summary>
+        /// the navigation page caller
+        /// </summary>
         public INavigation PageNavigation
         {
             get => pageNavigation;
             set => pageNavigation = value;
         }
-
-        public ObjectClasses.Barcode Barcode 
+        /// <summary>
+        /// the barcode page caller
+        /// </summary>
+        public Barcode Barcode 
         {
             get => barcode;
             set => barcode = value;
         }
-
-        public ObservableCollection<ObjectClasses.Products> Products
+        /// <summary>
+        /// the page observable collection
+        /// </summary>
+        public ObservableCollection<Products> Products
         {
             get => products;
             set => products = value;
         }
+
+        public static PublicSettings DefaultSettings
+        {
+            get => defaultSettings;
+            set => defaultSettings = value;
+        }
+
+        public static PublicSettings PublicSettings
+        {
+            get => userSettings;
+            set => userSettings = value;
+        }
+
+        public EntryDocument EntryDocument 
+        { 
+            get => entryDocument; 
+            set => entryDocument = value; 
+        }
+
+        public String GetQuantitiesJsonFile => JsonConvert.SerializeObject(new Quantities(this.EntryDocument, this.Products.ToList()));
         #endregion
 
         #region Constructors
@@ -44,6 +98,7 @@ namespace BarcodeScanner.Backbone
         {
             barcode = new ObjectClasses.Barcode();
             products = new ObservableCollection<ObjectClasses.Products>();
+            GetUserSettings();
         }
 
         public BarcodeScannerController(INavigation navigation)
@@ -51,8 +106,40 @@ namespace BarcodeScanner.Backbone
             barcode = new ObjectClasses.Barcode();
             products = new ObservableCollection<ObjectClasses.Products>();
             pageNavigation = navigation;
+            GetUserSettings();
         }
         #endregion
 
+        #region Functionality
+        /// <summary>
+        /// this function will get the specific settings for the instance user
+        /// </summary>
+        public static void GetUserSettings()
+        {
+            userSettings.AdminControl = Preferences.Get(SettingsKeys.AdminControl, defaultValue: defaultSettings.AdminControl);
+            userSettings.WebServicePath = Preferences.Get(SettingsKeys.WebServicePath, defaultValue: defaultSettings.WebServicePath);
+            userSettings.UseBatches = Preferences.Get(SettingsKeys.UseBatches, defaultValue: defaultSettings.UseBatches);
+            userSettings.UserBundle = Preferences.Get(SettingsKeys.UserBundle, defaultValue: defaultSettings.UserBundle);
+        }
+
+        /// <summary>
+        /// this function will set the specific settings for the instance user
+        /// </summary>
+        public static void SetUserSettings()
+        {
+            Preferences.Set(SettingsKeys.AdminControl, userSettings.AdminControl);
+            Preferences.Set(SettingsKeys.UseBatches, userSettings.UseBatches);
+            Preferences.Set(SettingsKeys.WebServicePath, userSettings.WebServicePath);
+            Preferences.Set(SettingsKeys.UserBundle, userSettings.UserBundle);
+        }
+
+        /// <summary>
+        /// this function will reset the user settings for the program instance to their default values
+        /// </summary>
+        public static void ResetSettingsToDefaults()
+        {
+            Preferences.Clear();
+        }
+        #endregion
     }
 }

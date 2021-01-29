@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:fontawesome="clr-namespace:FontAwesome"
              xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
              x:Class="BarcodeScanner.Components.PageScanner"
              Title="Scanner"
@@ -10,17 +11,73 @@
     <ContentPage.Content>
         <Grid VerticalOptions="CenterAndExpand"
               HorizontalOptions="CenterAndExpand">
-            <zxing:ZXingScannerView x:Name="scanView"
-                                    OnScanResult="scanView_OnScanResult"
-                                    IsScanning="True"
-                                    WidthRequest="300"
-                                    HeightRequest="500"
-                                    VerticalOptions="CenterAndExpand"
-                                    HorizontalOptions="CenterAndExpand"/>
-            <zxing:ZXingDefaultOverlay TopText="Scanati un cod de bare"/>
-            <Button Text = "Renunta" 
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="80*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="grHeader" Grid.Row="0" Grid.Column="0" 
+                      VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" 
+                      BackgroundColor="#99c2ff">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Margin="10,5,0,0" Grid.Column="0" 
+                       FontSize="Large" 
+                       VerticalOptions="CenterAndExpand" 
+                       Text="Mentor Depozit - Scanner" 
+                       TextColor="Black"/>
+                
+                <Grid Grid.Column="1">
+
+                    <Label x:Name="lblReturnIcon" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="Center" 
+                               FontSize="25" 
+                               Text="{x:Static fontawesome:FontAwesomeIcons.ArrowAltCircleLeft}" 
+                               FontFamily="{StaticResource FontAwesomeSolid}" TextColor="Black"/>
+                    <Button x:Name="btnReturnIcon" 
+                                VerticalOptions="CenterAndExpand" 
+                                HorizontalOptions="CenterAndExpand" 
+                                BackgroundColor="Transparent"
+                                Clicked="ReturnToMainPage">
+                        <Button.Triggers>
+                            <EventTrigger Event="MouseDown">
+                                <!--#TODO: Add Trigger Event-->
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1" 
+                  HorizontalOptions="CenterAndExpand" 
+                  VerticalOptions="CenterAndExpand">
+                <zxing:ZXingScannerView x:Name="scanView"
+                                        Grid.Row="1"
+                                        OnScanResult="scanView_OnScanResult"
+                                        IsScanning="True"
+                                        WidthRequest="300"
+                                        HeightRequest="500"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="CenterAndExpand"/>
+                <zxing:ZXingDefaultOverlay TopText="Scanati un cod de bare"/>
+            </Grid>
+            
+            <Button x:Name="btnReturn"
+                    Grid.Row="2"
+                    Text = "Renunta" 
                     HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="End" 
+                    VerticalOptions="CenterAndExpand" 
                     Background="#99c2ff"
                     BorderColor="Black"
                     FontSize="12"

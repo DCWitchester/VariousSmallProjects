@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:FontAwesome"
+             x:Class="BarcodeScanner.Components.EntryDataPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid x:Name="grContent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="80*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid x:Name="grHeader" Grid.Row="0" Grid.Column="0" 
+                      VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" 
+                      BackgroundColor="#99c2ff">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Margin="10,5,0,0" Grid.Column="0" 
+                           FontSize="Large" VerticalOptions="CenterAndExpand"
+                           Text="Mentor Depozit - Antet N.I.R" TextColor="Black"/>
+                    
+                    <Grid Grid.Column="1">
+
+                        <Label x:Name="lblReturnIcon" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="Center" 
+                               FontSize="25" 
+                               Text="{x:Static fontawesome:FontAwesomeIcons.ArrowAltCircleLeft}" 
+                               FontFamily="{StaticResource FontAwesomeSolid}" TextColor="Black"/>
+                        <Button x:Name="btnReturn" 
+                                VerticalOptions="CenterAndExpand" 
+                                HorizontalOptions="CenterAndExpand" 
+                                BackgroundColor="Transparent"
+                                Clicked="ReturnToMainPage">
+                            <Button.Triggers>
+                                <EventTrigger Event="MouseDown">
+                                    <!--#TODO: Add Trigger Event-->
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+                    </Grid>
+
+                </Grid>
+
+                <StackLayout x:Name="grElements" Grid.Column="0" Grid.Row="1"
+                      VerticalOptions="StartAndExpand"
+                      HorizontalOptions="StartAndExpand">
+
+                    <!--#region Management Unit-->
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*" />
+                            <ColumnDefinition Width="60*" />
+                            <ColumnDefinition Width="10*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="lblManagementUnitCode"
+                               HorizontalOptions="StartAndExpand" 
+                               VerticalOptions="CenterAndExpand" 
+                               Grid.Row="0" Grid.Column="0" 
+                               TextColor="Black" Text="Codul Gestiunii"
+                               FontSize="Small"
+                               Margin="10,0,0,0"/>
+                        
+                        <Entry x:Name="txtManagementUnitCode"
+                               HorizontalOptions="FillAndExpand" 
+                               VerticalOptions="FillAndExpand"
+                               Grid.Row="0" Grid.Column="1" 
+                               Placeholder="Codul Gestiunii"
+                               FontSize="Small"
+                               Focused="SelectedOnEntry"
+                               Text="{Binding entryDocument.ManagementUnitCode, Mode=TwoWay}"/>
+
+                        <Grid Grid.Column="2">
+                            <Label x:Name="lblManagementUnitSearchIcon" 
+                                                   VerticalOptions="Center" 
+                                                   HorizontalOptions="Center" 
+                                                   FontSize="15" 
+                                                   Text="{x:Static fontawesome:FontAwesomeIcons.Search}" 
+                                                   FontFamily="{StaticResource FontAwesomeSolid}" 
+                                                   TextColor="Black"/>
+                            <Button x:Name="btnManagementUnitSearch" 
+                                                    VerticalOptions="CenterAndExpand" 
+                                                    HorizontalOptions="CenterAndExpand" 
+                                                    BackgroundColor="Transparent">
+                                <Button.Triggers>
+                                    <EventTrigger Event="MouseDown">
+                                        <!--#TODO: Add Trigger Event-->
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Margin="10,0,0,0">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="lblManagementUnitName" HorizontalOptions="StartAndExpand" 
+                               VerticalOptions="CenterAndExpand" 
+                               Grid.Row="0" Grid.Column="0" 
+                               TextColor="Black" Text="{Binding entryDocument.ManagementUnitName, Mode=TwoWay}"
+                               FontSize="Small"/>
+                    </Grid>
+
+                    <!--#endregion-->
+                    
+                    <!--#region Partner-->
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*" />
+                            <ColumnDefinition Width="60*" />
+                            <ColumnDefinition Width="10*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="lblPartnerCode"
+                               HorizontalOptions="CenterAndExpand" 
+                               VerticalOptions="CenterAndExpand" 
+                               Grid.Row="0" Grid.Column="0" 
+                               TextColor="Black" Text="Codul Partenerului"
+                               FontSize="Small"
+                               Margin="10,0,0,0"/>
+
+                        <Entry x:Name="txtPartnerCode"
+                               HorizontalOptions="FillAndExpand" 
+                               VerticalOptions="FillAndExpand"
+                               Grid.Row="0" Grid.Column="1" 
+                               Placeholder="Codul Partenerului (Fuben)"
+                               FontSize="Small"
+                               Focused="SelectedOnEntry"
+                               Text="{Binding entryDocument.PartnerCode, Mode=TwoWay}"/>
+
+                        <Grid Grid.Column="2">
+
+                            <Label x:Name="lblPartnerSearchIcon" 
+                                                   VerticalOptions="Center" 
+                                                   HorizontalOptions="Center" 
+                                                   FontSize="15" 
+                                                   Text="{x:Static fontawesome:FontAwesomeIcons.Search}" 
+                                                   FontFamily="{StaticResource FontAwesomeSolid}" 
+                                                   TextColor="Black"/>
+                            <Button x:Name="btnPartnerSearch" 
+                                                    VerticalOptions="CenterAndExpand" 
+                                                    HorizontalOptions="StartAndExpand" 
+                                                    BackgroundColor="Transparent"
+                                                    Clicked="SelectPartner">
+                                <Button.Triggers>
+                                    <EventTrigger Event="MouseDown">
+                                        <!--#TODO: Add Trigger Event-->
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Margin="10,0,0,0">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="lblPartnerName" HorizontalOptions="StartAndExpand" 
+                               VerticalOptions="CenterAndExpand" 
+                               Grid.Row="0" Grid.Column="0" 
+                               TextColor="Black" Text="{Binding entryDocument.PartnerName, Mode=TwoWay}"
+                               FontSize="Small"/>
+                    </Grid>
+                    <!--#endregion-->
+                    
+                    <!--#region Numar Document-->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*" />
+                            <ColumnDefinition Width="70*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="lblDocumentNumber"
+                               HorizontalOptions="StartAndExpand" 
+                               VerticalOptions="CenterAndExpand" 
+                               Grid.Row="0" Grid.Column="0" 
+                               TextColor="Black" Text="Numarul Documentului"
+                               FontSize="Small"
+                               Margin="10,0,0,0"/>
+
+                        <Entry x:Name="txtDocumentNumber"
+                               HorizontalOptions="FillAndExpand" 
+                               VerticalOptions="FillAndExpand"
+                               Grid.Row="0" Grid.Column="1" 
+                               Keyboard="Numeric"
+                               Placeholder="Numarul Documentului (Aviz sau Factura)"
+                               Focused = "SelectedOnEntry"
+                               Text="{Binding entryDocument.DocumentNumber, Mode=TwoWay}"
+                               FontSize="Small"
+                               Margin="0,0,10,0"/>
+                    </Grid>
+                    <!--#endregion-->
+                    
+                    <!--#region IsNotice-->
+                    <Grid>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
+                            <Label Margin="10,0,0,0" 
+                                   Text="Documentul de intrare este un aviz de expeditie?" 
+                                   VerticalOptions="Center" 
+                                   HorizontalOptions="StartAndExpand" 
+                                   TextColor="Black"/>
+                            <CheckBox IsChecked="{Binding entryDocument.IsNotice, Mode=TwoWay}" HorizontalOptions="End" 
+                                      HeightRequest="50"
+                                      x:Name="chbIsNotice"/>
+                        </StackLayout>
+                        <Button x:Name="btnUseBatches" BackgroundColor="Transparent" Clicked="CheckIsNotice"/>
+                    </Grid>
+                    <!--#endregion-->
+                    
+                    <!--#region DocumentDate-->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="35*" />
+                            <ColumnDefinition Width="65*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="lblDocumentDate"
+                               HorizontalOptions="StartAndExpand" 
+                               VerticalOptions="CenterAndExpand" 
+                               Grid.Row="0" Grid.Column="0" 
+                               TextColor="Black" Text="Data Documentului"
+                               FontSize="Small"
+                               Margin="10,0,0,0"/>
+
+                        <DatePicker x:Name="dtpDocumentDate"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="0" Grid.Column="1"
+                                    Format="dd-MM-yyyy"
+                                    Date="{Binding entryDocument.DocumentDate, Mode=TwoWay}"/>
+                    </Grid>
+                    <!--#endregion-->
+
+                </StackLayout>
+
+                <Grid x:Name="grFooter" Grid.Row="2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button x:Name="btnSendToServer"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Background="#99c2ff"
+                            BorderColor="Black"
+                            FontSize="12"
+                            BorderWidth="1"
+                            CornerRadius="25"
+                            Text="Trimite server"
+                            Clicked="SendSalesToServer"/>
+                </Grid>
+
+                
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -11,10 +11,10 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Scandit.BarcodePicker.Unified/5.18.0.10": {
+      "Scandit.BarcodePicker.Unified/5.18.2.10": {
         "type": "package",
         "dependencies": {
-          "Scandit.BarcodePicker.Xamarin": "5.18.0.10"
+          "Scandit.BarcodePicker.Xamarin": "5.18.2.10"
         },
         "compile": {
           "lib/Xamarin.iOS/Scandit.BarcodePicker.Unified.Abstractions.dll": {},
@@ -25,13 +25,22 @@
           "lib/Xamarin.iOS/Scandit.BarcodePicker.Unified.dll": {}
         }
       },
-      "Scandit.BarcodePicker.Xamarin/5.18.0.10": {
+      "Scandit.BarcodePicker.Xamarin/5.18.2.10": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS/ScanditSDK.dll": {}
         },
         "runtime": {
           "lib/Xamarin.iOS/ScanditSDK.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
         }
       },
       "Xam.Plugin.Iconize/3.5.0.129": {
@@ -76,8 +85,11 @@
           }
         }
       },
-      "Xamarin.Essentials/1.5.3.2": {
+      "Xamarin.Essentials/1.6.0": {
         "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
         "frameworkAssemblies": [
           "OpenTK-1.0",
           "System.Drawing.Common.dll"
@@ -243,10 +255,10 @@
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Scandit.BarcodePicker.Unified": "5.18.0.10",
+          "Scandit.BarcodePicker.Unified": "5.18.2.10",
           "Xam.Plugin.Iconize": "3.5.0.129",
           "Xam.Plugin.Iconize.FontAwesome": "3.5.0.129",
-          "Xamarin.Essentials": "1.5.3.2",
+          "Xamarin.Essentials": "1.6.0",
           "Xamarin.Forms": "4.8.0.1821",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1"
@@ -269,10 +281,10 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Scandit.BarcodePicker.Unified/5.18.0.10": {
+      "Scandit.BarcodePicker.Unified/5.18.2.10": {
         "type": "package",
         "dependencies": {
-          "Scandit.BarcodePicker.Xamarin": "5.18.0.10"
+          "Scandit.BarcodePicker.Xamarin": "5.18.2.10"
         },
         "compile": {
           "lib/Xamarin.iOS/Scandit.BarcodePicker.Unified.Abstractions.dll": {},
@@ -283,13 +295,22 @@
           "lib/Xamarin.iOS/Scandit.BarcodePicker.Unified.dll": {}
         }
       },
-      "Scandit.BarcodePicker.Xamarin/5.18.0.10": {
+      "Scandit.BarcodePicker.Xamarin/5.18.2.10": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS/ScanditSDK.dll": {}
         },
         "runtime": {
           "lib/Xamarin.iOS/ScanditSDK.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
         }
       },
       "Xam.Plugin.Iconize/3.5.0.129": {
@@ -334,8 +355,11 @@
           }
         }
       },
-      "Xamarin.Essentials/1.5.3.2": {
+      "Xamarin.Essentials/1.6.0": {
         "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
         "frameworkAssemblies": [
           "OpenTK-1.0",
           "System.Drawing.Common.dll"
@@ -501,10 +525,10 @@
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Scandit.BarcodePicker.Unified": "5.18.0.10",
+          "Scandit.BarcodePicker.Unified": "5.18.2.10",
           "Xam.Plugin.Iconize": "3.5.0.129",
           "Xam.Plugin.Iconize.FontAwesome": "3.5.0.129",
-          "Xamarin.Essentials": "1.5.3.2",
+          "Xamarin.Essentials": "1.6.0",
           "Xamarin.Forms": "4.8.0.1821",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1"
@@ -527,10 +551,10 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Scandit.BarcodePicker.Unified/5.18.0.10": {
+      "Scandit.BarcodePicker.Unified/5.18.2.10": {
         "type": "package",
         "dependencies": {
-          "Scandit.BarcodePicker.Xamarin": "5.18.0.10"
+          "Scandit.BarcodePicker.Xamarin": "5.18.2.10"
         },
         "compile": {
           "lib/Xamarin.iOS/Scandit.BarcodePicker.Unified.Abstractions.dll": {},
@@ -541,13 +565,22 @@
           "lib/Xamarin.iOS/Scandit.BarcodePicker.Unified.dll": {}
         }
       },
-      "Scandit.BarcodePicker.Xamarin/5.18.0.10": {
+      "Scandit.BarcodePicker.Xamarin/5.18.2.10": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS/ScanditSDK.dll": {}
         },
         "runtime": {
           "lib/Xamarin.iOS/ScanditSDK.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
         }
       },
       "Xam.Plugin.Iconize/3.5.0.129": {
@@ -592,8 +625,11 @@
           }
         }
       },
-      "Xamarin.Essentials/1.5.3.2": {
+      "Xamarin.Essentials/1.6.0": {
         "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
         "frameworkAssemblies": [
           "OpenTK-1.0",
           "System.Drawing.Common.dll"
@@ -759,10 +795,10 @@
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Scandit.BarcodePicker.Unified": "5.18.0.10",
+          "Scandit.BarcodePicker.Unified": "5.18.2.10",
           "Xam.Plugin.Iconize": "3.5.0.129",
           "Xam.Plugin.Iconize.FontAwesome": "3.5.0.129",
-          "Xamarin.Essentials": "1.5.3.2",
+          "Xamarin.Essentials": "1.6.0",
           "Xamarin.Forms": "4.8.0.1821",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1"
@@ -785,10 +821,10 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Scandit.BarcodePicker.Unified/5.18.0.10": {
+      "Scandit.BarcodePicker.Unified/5.18.2.10": {
         "type": "package",
         "dependencies": {
-          "Scandit.BarcodePicker.Xamarin": "5.18.0.10"
+          "Scandit.BarcodePicker.Xamarin": "5.18.2.10"
         },
         "compile": {
           "lib/Xamarin.iOS/Scandit.BarcodePicker.Unified.Abstractions.dll": {},
@@ -799,13 +835,22 @@
           "lib/Xamarin.iOS/Scandit.BarcodePicker.Unified.dll": {}
         }
       },
-      "Scandit.BarcodePicker.Xamarin/5.18.0.10": {
+      "Scandit.BarcodePicker.Xamarin/5.18.2.10": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS/ScanditSDK.dll": {}
         },
         "runtime": {
           "lib/Xamarin.iOS/ScanditSDK.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
         }
       },
       "Xam.Plugin.Iconize/3.5.0.129": {
@@ -850,8 +895,11 @@
           }
         }
       },
-      "Xamarin.Essentials/1.5.3.2": {
+      "Xamarin.Essentials/1.6.0": {
         "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
         "frameworkAssemblies": [
           "OpenTK-1.0",
           "System.Drawing.Common.dll"
@@ -1017,10 +1065,10 @@
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Scandit.BarcodePicker.Unified": "5.18.0.10",
+          "Scandit.BarcodePicker.Unified": "5.18.2.10",
           "Xam.Plugin.Iconize": "3.5.0.129",
           "Xam.Plugin.Iconize.FontAwesome": "3.5.0.129",
-          "Xamarin.Essentials": "1.5.3.2",
+          "Xamarin.Essentials": "1.6.0",
           "Xamarin.Forms": "4.8.0.1821",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1"
@@ -1066,10 +1114,10 @@
         "packageIcon.png"
       ]
     },
-    "Scandit.BarcodePicker.Unified/5.18.0.10": {
-      "sha512": "uWy6jkRz9T0H/l/qykDiNP0AVUrFEHcVE+H5T26bvVvVzojeW2BuA0mGtjVkgv2j+DVWN3mSN3rLrkAKVl3oMw==",
+    "Scandit.BarcodePicker.Unified/5.18.2.10": {
+      "sha512": "Fy7s++Q+qD+0r1Me9iHlQDL2Jd5h+W7c2+VYMlEnsFpbJPS7Y2d80wFIcu6IHjfzVXqT7TKuQBza4v0GBBUtkA==",
       "type": "package",
-      "path": "scandit.barcodepicker.unified/5.18.0.10",
+      "path": "scandit.barcodepicker.unified/5.18.2.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1088,21 +1136,68 @@
         "lib/uap10/Scandit.BarcodePicker.Unified.Abstractions.dll",
         "lib/uap10/Scandit.BarcodePicker.Unified.dll",
         "lib/uap10/Scandit.BarcodePicker.Unified.pri",
-        "scandit.barcodepicker.unified.5.18.0.10.nupkg.sha512",
+        "scandit.barcodepicker.unified.5.18.2.10.nupkg.sha512",
         "scandit.barcodepicker.unified.nuspec"
       ]
     },
-    "Scandit.BarcodePicker.Xamarin/5.18.0.10": {
-      "sha512": "pxKGNYsa3yvGF78ZBkmXYd7JYvA6u3VNTj129+5sCJBGZ401IYYcZa8lrcbm8Q+bGluoCd+rHEKUnARXK1TuxA==",
+    "Scandit.BarcodePicker.Xamarin/5.18.2.10": {
+      "sha512": "ofo1Xn4V3ECMZnTsB+KGydjSWA98A1Gh3P+CCwoOdm1EeO3s1in4dpjsV+rg7G5cVQFR1JPxWI/WfGb+iuNXcA==",
       "type": "package",
-      "path": "scandit.barcodepicker.xamarin/5.18.0.10",
+      "path": "scandit.barcodepicker.xamarin/5.18.2.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/MonoAndroid10/ScanditSDK.dll",
         "lib/Xamarin.iOS/ScanditSDK.dll",
-        "scandit.barcodepicker.xamarin.5.18.0.10.nupkg.sha512",
+        "scandit.barcodepicker.xamarin.5.18.2.10.nupkg.sha512",
         "scandit.barcodepicker.xamarin.nuspec"
+      ]
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "type": "package",
+      "path": "system.numerics.vectors/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Numerics.Vectors.dll",
+        "lib/net46/System.Numerics.Vectors.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.Numerics.Vectors.dll",
+        "lib/netstandard1.0/System.Numerics.Vectors.xml",
+        "lib/netstandard2.0/System.Numerics.Vectors.dll",
+        "lib/netstandard2.0/System.Numerics.Vectors.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/System.Numerics.Vectors.dll",
+        "ref/net45/System.Numerics.Vectors.xml",
+        "ref/net46/System.Numerics.Vectors.dll",
+        "ref/net46/System.Numerics.Vectors.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/System.Numerics.Vectors.dll",
+        "ref/netstandard1.0/System.Numerics.Vectors.xml",
+        "ref/netstandard2.0/System.Numerics.Vectors.dll",
+        "ref/netstandard2.0/System.Numerics.Vectors.xml",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.numerics.vectors.4.5.0.nupkg.sha512",
+        "system.numerics.vectors.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Xam.Plugin.Iconize/3.5.0.129": {
@@ -1173,10 +1268,10 @@
         "xam.plugin.iconize.fontawesome.nuspec"
       ]
     },
-    "Xamarin.Essentials/1.5.3.2": {
-      "sha512": "BSLgDJUOPFRwTpQaftM+s4qb/MsTjrqXulEYDOcK6KF3i0Orf75zo3RwRfqnQ8WfpoEFxW/v0jgcPWCvOMgHxg==",
+    "Xamarin.Essentials/1.6.0": {
+      "sha512": "geJYnjTyPv2npClIkBxLXk9cOV9CPwj/oayA8I4+6NpZc/dIiYxax36m25SW8TrCMR/rvyY44fZBjWBvj7BCQQ==",
       "type": "package",
-      "path": "xamarin.essentials/1.5.3.2",
+      "path": "xamarin.essentials/1.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1210,6 +1305,9 @@
         "lib/xamarinios10/Xamarin.Essentials.dll",
         "lib/xamarinios10/Xamarin.Essentials.pdb",
         "lib/xamarinios10/Xamarin.Essentials.xml",
+        "lib/xamarinmac20/Xamarin.Essentials.dll",
+        "lib/xamarinmac20/Xamarin.Essentials.pdb",
+        "lib/xamarinmac20/Xamarin.Essentials.xml",
         "lib/xamarintvos10/Xamarin.Essentials.dll",
         "lib/xamarintvos10/Xamarin.Essentials.pdb",
         "lib/xamarintvos10/Xamarin.Essentials.xml",
@@ -1217,7 +1315,7 @@
         "lib/xamarinwatchos10/Xamarin.Essentials.pdb",
         "lib/xamarinwatchos10/Xamarin.Essentials.xml",
         "readme.txt",
-        "xamarin.essentials.1.5.3.2.nupkg.sha512",
+        "xamarin.essentials.1.6.0.nupkg.sha512",
         "xamarin.essentials.nuspec"
       ]
     },
@@ -1591,10 +1689,10 @@
     "Xamarin.iOS,Version=v1.0": [
       "BarcodeScanner >= 1.0.0",
       "Newtonsoft.Json >= 12.0.3",
-      "Scandit.BarcodePicker.Unified >= 5.18.0.10",
+      "Scandit.BarcodePicker.Unified >= 5.18.2.10",
       "Xam.Plugin.Iconize >= 3.5.0.129",
       "Xam.Plugin.Iconize.FontAwesome >= 3.5.0.129",
-      "Xamarin.Essentials >= 1.5.3.2",
+      "Xamarin.Essentials >= 1.6.0",
       "Xamarin.Forms >= 4.8.0.1821",
       "ZXing.Net.Mobile >= 2.4.1"
     ]
@@ -1648,7 +1746,7 @@
           },
           "Scandit.BarcodePicker.Unified": {
             "target": "Package",
-            "version": "[5.18.0.10, )"
+            "version": "[5.18.2.10, )"
           },
           "Xam.Plugin.Iconize": {
             "target": "Package",
@@ -1660,7 +1758,7 @@
           },
           "Xamarin.Essentials": {
             "target": "Package",
-            "version": "[1.5.3.2, )"
+            "version": "[1.6.0, )"
           },
           "Xamarin.Forms": {
             "target": "Package",

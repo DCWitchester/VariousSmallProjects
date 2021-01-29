@@ -14,13 +14,13 @@ namespace BarcodeScanner
                                     .With(new Plugin.Iconize.Fonts.FontAwesomeBrandsModule())
                                     .With(new Plugin.Iconize.Fonts.FontAwesomeSolidModule());
 
-            Boolean x = Settings.PublicSettings.AdminPath;
             MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
         {
         }
+
 
         protected override void OnSleep()
         {

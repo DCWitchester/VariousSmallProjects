@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:FontAwesome"
+             x:Class="BarcodeScanner.Components.SettingsPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid x:Name="grContent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="80*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid x:Name="grHeader" Grid.Row="0" Grid.Column="0" 
+                      VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" 
+                      BackgroundColor="#99c2ff">
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Margin="10,5,0,0" Grid.Column="0" 
+                           FontSize="Large" Text="Mentor Depozit - Setari" TextColor="Black"/>
+                    <Grid Grid.Column="1">
+                        
+                        <Label x:Name="lblReturnIcon" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="Center" 
+                               FontSize="25" 
+                               Text="{x:Static fontawesome:FontAwesomeIcons.ArrowAltCircleLeft}" 
+                               FontFamily="{StaticResource FontAwesomeSolid}" TextColor="Black"/>
+                        <Button x:Name="btnReturn" 
+                                VerticalOptions="CenterAndExpand" 
+                                HorizontalOptions="CenterAndExpand" 
+                                BackgroundColor="Transparent"
+                                Clicked="ReturnToCaller">
+                            <Button.Triggers>
+                                <EventTrigger Event="MouseDown">
+                                    <!--#TODO: Add Trigger Event-->
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+                    </Grid>
+                    
+                </Grid>
+
+                <StackLayout x:Name="grElements" Grid.Row="1" Grid.Column="0"
+                      VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                    
+                    <!--#region Web Service Path-->
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="35*" />
+                            <ColumnDefinition Width="65*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label HorizontalOptions="StartAndExpand"
+                               Margin="20,0,0,0"
+                               VerticalOptions="CenterAndExpand" 
+                               Grid.Row="0" Grid.Column="0" 
+                               TextColor="Black" Text="Cale server web:"
+                               FontSize="Small"/>
+                        <Entry x:Name="txtWebServicePath"
+                               HorizontalOptions="FillAndExpand" 
+                               VerticalOptions="FillAndExpand"
+                               Grid.Row="0" Grid.Column="1" 
+                               Focused="SelectedOnEntry"
+                               Placeholder="Cale catre serviciul web al evidentei primare"
+                               Text="{Binding localSettings.WebServicePath, Mode=TwoWay}"
+                               FontSize="Small"/>
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region Use Batches-->
+                    <Grid>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
+                            <Label Margin="20,0,0,0" 
+                                   Text="Doriti sa adaugati lotul la produsele scanate?" 
+                                   VerticalOptions="Center" 
+                                   HorizontalOptions="StartAndExpand" 
+                                   TextColor="Black"/>
+                            <CheckBox IsChecked="{Binding localSettings.UseBatches, Mode=TwoWay}" 
+                                      HorizontalOptions="End" 
+                                      HeightRequest="50"
+                                      x:Name="chbUseBatches"/>
+                        </StackLayout>
+                        <Button x:Name="btnUseBatches" BackgroundColor="Transparent" Clicked="CheckUseBatches"/>
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region Admin Control-->
+                    <Grid>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
+                            <Label Margin="20,0,0,0" 
+                                   Text="Folosire modul administrare(verificare)?" 
+                                   VerticalOptions="Center" 
+                                   HorizontalOptions="StartAndExpand" 
+                                   TextColor="Black"/>
+                            <CheckBox IsChecked="{Binding localSettings.AdminControl, Mode=TwoWay}" 
+                                      HorizontalOptions="End" 
+                                      HeightRequest="50"
+                                      x:Name="chbAdminControl"/>
+                        </StackLayout>
+                        <Button x:Name="btnAdminControl" BackgroundColor="Transparent" Clicked="CheckAdminControl"/>
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region User Bundle-->
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="35*" />
+                            <ColumnDefinition Width="65*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label HorizontalOptions="StartAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               Margin="20,0,0,0"
+                               Grid.Row="0" Grid.Column="0" 
+                               TextColor="Black" Text="Pachet utilizator:"
+                               FontSize="Small"/>
+                        <Entry x:Name="txtUserBundle"
+                               HorizontalOptions="FillAndExpand" 
+                               VerticalOptions="FillAndExpand"
+                               Grid.Row="0" Grid.Column="1"
+                               MaxLength="3"
+                               Placeholder="Pachetul utilizatorului"
+                               Focused="SelectedOnEntry"
+                               Text="{Binding localSettings.UserBundle, Mode=TwoWay}"
+                               FontSize="Small"/>
+                    </Grid>
+                    <!--#endregion-->
+
+                </StackLayout>
+
+                <Grid x:Name="grFooter" Grid.Row="2" Grid.Column="0"
+                      VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="33*" />
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Button x:Name="btnSave"
+                            Grid.Column="1"
+                            Text="Salvati Setarile"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Background="#99c2ff"
+                            BorderColor="Black"
+                            FontSize="12"
+                            BorderWidth="1"
+                            CornerRadius="25"
+                            Clicked="SaveSettings"/>
+                    
+                    <Button x:Name="btnReset"
+                            Grid.Column="2"
+                            Text="Resetati valorile"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Background="#99c2ff"
+                            BorderColor="Black"
+                            FontSize="12"
+                            BorderWidth="1"
+                            CornerRadius="25"
+                            Clicked="ResetSettings"/>
+
+                </Grid>
+                
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

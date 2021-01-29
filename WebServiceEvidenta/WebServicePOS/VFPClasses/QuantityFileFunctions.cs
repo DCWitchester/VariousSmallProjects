@@ -24,7 +24,7 @@ namespace WebServiceEvidenta.VFPClasses
             //we set the command string
             String command = String.Format("SELECT TOP 1 denm,pv " +
                                                 "FROM '{0}' " +
-                                                "WHERE UPPER(ALLTRIM(codp)) == '{1}' OR UPPER(ALLTRIM(codext)) == '{1}' " +
+                                                "WHERE UPPER(ALLTRIM(codp)) == '{1}' OR LEFT(UPPER(ALLTRIM(codext)),12) == '{1}' " +
                                                 "ORDER BY codp",
                                                 base.ProductGlossary,
                                                 productCode.ToUpper().Trim());
@@ -93,10 +93,12 @@ namespace WebServiceEvidenta.VFPClasses
             foreach (var element in quantities.ProductQuantities)
             {
                 String command = String.Format("INSERT INTO '{0}' " +
-                                                        "VALUES ('{1}',{2}) " + Environment.NewLine,
+                                                        "VALUES ('{1}',{2}, {3}, {4}) " + Environment.NewLine,
                                                         QuantityFile,
                                                         element.ProductCode.Substring(0, 12),
-                                                        element.ProductQunatity
+                                                        element.ProductQunatity,
+                                                        element.ProductBatch,
+                                                        Miscellaneous.Miscellaneous.ConvertDateStringToFoxDate(element.ProductBatchDate)
                                                         );
                 oCmd.CommandText = command;
                 oCmd.ExecuteNonQuery();
@@ -113,7 +115,7 @@ namespace WebServiceEvidenta.VFPClasses
             if (!File.Exists(base.QuantityFile))
             {
                 //the base string command for the creation of the file
-                String commad = $"CREATE TABLE '{base.QuantityFile}' {base.QuantityFileStructure})";
+                String commad = $"CREATE TABLE '{base.QuantityFile}' {base.QuantityFileStructure}";
                 //we initialize a new command
                 System.Data.OleDb.OleDbCommand oCmd = base.FileBaseConnection.CreateCommand();
                 //set the command text to the db command

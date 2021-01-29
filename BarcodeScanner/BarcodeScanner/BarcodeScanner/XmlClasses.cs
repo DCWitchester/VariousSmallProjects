@@ -23,5 +23,33 @@ namespace BarcodeScanner
             /// </summary>
             public String ProductPrice { get; set; }
         }
+
+
+        [XmlRoot(ElementName = "Gestiune")]
+        public class ManagementUnit
+        {
+            public String ManagementUnitCode { get; set; }
+            public String ManagementUnitName { get; set; }
+        }
+
+
+        [XmlRoot(ElementName = "Partener")]
+        public class PartnerDisplay
+        {
+            /// <summary>
+            /// the PartnerCode for the item
+            /// </summary>
+            public String PartnerCode { get; set; }
+            /// <summary>
+            /// the PartnerName for the item
+            /// </summary>
+            public String PartnerName { get; set; }
+            /// <summary>
+            /// the Partners FiscalCode
+            /// </summary>
+            public String PartnerFiscalCode { get; set; }
+        }
+
+
     }
 }

@@ -22,3 +22,15 @@ D:\WebServiceEvidentaV2\WebService\WebServicePOS\obj\Debug\WebServiceEvidenta.cs
 D:\WebServiceEvidentaV2\WebService\WebServicePOS\obj\Debug\WebServiceEvidenta.csproj.CopyComplete
 D:\WebServiceEvidentaV2\WebService\WebServicePOS\obj\Debug\WebServiceEvidenta.dll
 D:\WebServiceEvidentaV2\WebService\WebServicePOS\obj\Debug\WebServiceEvidenta.pdb
+F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\bin\WebServiceEvidenta.dll.config
+F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\bin\WebServiceEvidenta.dll
+F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\bin\WebServiceEvidenta.pdb
+F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\bin\FirebirdSql.Data.FirebirdClient.dll
+F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\bin\Newtonsoft.Json.dll
+F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\bin\FirebirdSql.Data.FirebirdClient.pdb
+F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\bin\Newtonsoft.Json.xml
+F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\obj\Debug\WebServiceEvidenta.csprojAssemblyReference.cache
+F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\obj\Debug\WebServiceEvidenta.csproj.CoreCompileInputs.cache
+F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\obj\Debug\WebServiceEvidenta.csproj.CopyComplete
+F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\obj\Debug\WebServiceEvidenta.dll
+F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\obj\Debug\WebServiceEvidenta.pdb

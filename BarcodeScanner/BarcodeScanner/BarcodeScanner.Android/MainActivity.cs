@@ -12,6 +12,7 @@ using Java.IO;
 using Android.Content.Res;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace BarcodeScanner.Droid
 {
@@ -69,9 +70,8 @@ namespace BarcodeScanner.Droid
             {
                 content = sr.ReadToEnd();
             }
-            dynamic obj = JObject.Parse(content);
-            Settings.PublicSettings.WebServicePath = obj.PublicSettings.WebServicePath;
-            Settings.PublicSettings.AdminPath = obj.PublicSettings.AdminControl;
+            Backbone.BarcodeScannerController.DefaultSettings = JsonConvert.DeserializeObject<Services.SettingsDeserializer>(content).PublicSettings;
         }
+        
     }
 }

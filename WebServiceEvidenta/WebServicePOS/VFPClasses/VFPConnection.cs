@@ -56,6 +56,10 @@ namespace WebServiceEvidenta.VFPClasses
         /// the path to the partner glossary
         /// </summary>
         internal String PartnerGlossary => GlossaryPath + "\\fb.dbf";
+        /// <summary>
+        /// the path to the partner glossary
+        /// </summary>
+        internal String ManagementUnitGlossary => GlossaryPath + "\\gest.dbf";
         #endregion
 
         #region Document Files
@@ -64,13 +68,17 @@ namespace WebServiceEvidenta.VFPClasses
         /// </summary>
         /// <param name="dateTime">the given datetime</param>
         internal String SalesFile(DateTime dateTime) => FilesPath + "\\fa" + dateTime.Month.ToString().Trim().PadLeft(2, '0') + dateTime.Year.ToString().Trim() + ".dbf";
+        /// <summary>
+        /// the path to the specific stock file
+        /// </summary>
+        internal String StockFile => FilesPath + "\\stocreal.dbf";
         #endregion
 
         #region Special Files
         /// <summary>
         /// the path to the specific quantity files
         /// </summary>
-        internal String QuantityFile => FilesPath + @"\CantitatiProduse.dbf";
+        internal String QuantityFile => FilesPath + @"\CantProd.dbf";
         #endregion
 
         #endregion
@@ -171,7 +179,7 @@ namespace WebServiceEvidenta.VFPClasses
         /// <summary>
         /// the base structure for the QuantityFile
         /// </summary>
-        protected String QuantityFileStructure => "(code Character(12), quantity Numeric(18,4)";
+        protected String QuantityFileStructure => "(pac Character(3), gest Character(4), fuben Character(4), nrFact Numeric(10), isAviz Logical, data Date, codp Character(12), cant Numeric(18,4), lot Character(50), dataLot Date)";
         #endregion
 
         #region Dispose Implementation

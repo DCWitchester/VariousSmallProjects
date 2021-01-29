@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Xml;
-using WebServiceEvidenta.VFPClasses;
+using WebServiceEvidenta.VFPClasses.GeneralClasses;
+using WebServiceEvidenta.VFPClasses.SpecificClasses;
 
 namespace WebServiceEvidenta.WebServices
 {
@@ -22,7 +23,7 @@ namespace WebServiceEvidenta.WebServices
         [WebMethod]
         public XmlDocument GetProductName(String ProductCode)
         {
-            using (QuantityFileFunctions vfp = new QuantityFileFunctions())
+            using (ProductFunctions vfp = new ProductFunctions())
             {
                 return vfp.getProductName(ProductCode);
             }
@@ -34,6 +35,60 @@ namespace WebServiceEvidenta.WebServices
             using (QuantityFileFunctions vfp = new QuantityFileFunctions())
             {
                 vfp.SetQuantityFile(QuantityFile);
+            }
+        }
+
+        [WebMethod]
+        public XmlDocument GetProductStock(String ProductCode)
+        {
+            using (ProductFunctions vfp = new ProductFunctions())
+            {
+                return vfp.getProductStock(ProductCode);
+            }
+        }
+
+        [WebMethod]
+        public XmlDocument GetProductStockViaExternalCode(String ProductCode)
+        {
+            using (ProductFunctions vfp = new ProductFunctions())
+            {
+                return vfp.getProductStockViaExternalCode(ProductCode);
+            }
+        }
+
+        [WebMethod]
+        public XmlDocument GetPartnerDisplay(String PartnerCode)
+        {
+            using (PartnerFunctions vfp = new PartnerFunctions())
+            {
+                return vfp.getPartner(PartnerCode);
+            }
+        }
+
+        [WebMethod]
+        public XmlDocument GetPartnersDisplay()
+        {
+            using (PartnerFunctions vfp = new PartnerFunctions())
+            {
+                return vfp.getPartners();
+            }
+        }
+
+        [WebMethod]
+        public XmlDocument GetManagementUnitDisplay(String ManagementUnitCode)
+        {
+            using (ManagementUnitFunctions vfp = new ManagementUnitFunctions())
+            {
+                return vfp.GetManagementUnit(ManagementUnitCode);
+            }
+        }
+
+        [WebMethod]
+        public XmlDocument GetManagementUnitsDisplay()
+        {
+            using (ManagementUnitFunctions vfp = new ManagementUnitFunctions())
+            {
+                return vfp.GetManagementUnits();
             }
         }
     }

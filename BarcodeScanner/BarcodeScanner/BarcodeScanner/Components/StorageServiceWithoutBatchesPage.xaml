@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:FontAwesome"
+             x:Class="BarcodeScanner.Components.StorageServiceWithoutBatchesPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid VerticalOptions="CenterAndExpand" 
+              HorizontalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="90*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="grHeader" 
+                  Grid.Row="0" Grid.Column="0" 
+                  VerticalOptions="CenterAndExpand" 
+                  HorizontalOptions="StartAndExpand" 
+                  BackgroundColor="#99c2ff">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Margin="10,5,0,0" 
+                       Grid.Column="0" 
+                       FontSize="Large" 
+                       Text="Mentor Depozit" 
+                       TextColor="Black"/>
+
+                <StackLayout Grid.Column="1">
+                    <Grid>
+                        <Label x:Name="lblSettingsIcon" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="Center" 
+                               FontSize="25" 
+                               Text="{x:Static fontawesome:FontAwesomeIcons.Cog}" 
+                               FontFamily="{StaticResource FontAwesomeSolid}" 
+                               TextColor="Black"/>
+                        <Button x:Name="btnSettings" 
+                                VerticalOptions="FillAndExpand" 
+                                HorizontalOptions="FillAndExpand" 
+                                BackgroundColor="Transparent" 
+                                Clicked="CallSettings">
+                        </Button>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+
+            <!-- The Initial Grid to break the page in the needed zones-->
+            <Grid x:Name="grElementDisplay" 
+                  Grid.Column="0" 
+                  Grid.Row="1"
+                  VerticalOptions="CenterAndExpand"
+                  HorizontalOptions="CenterAndExpand" >
+
+                <!-- The initial Grid Row Definition-->
+                <Grid.RowDefinitions>
+                    <!--The Row Definition for the List View-->
+                    <RowDefinition Height="85*" />
+                    <!--The Row Definition for the Button Footer-->
+                    <RowDefinition Height="15*" />
+                </Grid.RowDefinitions>
+
+                <!--#region List View-->
+                <!--The stack Layout will be used to display the Table item-->
+                <StackLayout Grid.Row="0" x:Name="productsGridTable">
+                    <!--#region Table Header-->
+                    <Grid x:Name="productsGridHeader">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*" />
+                            <ColumnDefinition Width="30*" />
+                            <ColumnDefinition Width="30*" />
+                            <ColumnDefinition Width="10*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" 
+                               Grid.Row="0" 
+                               FontSize="Small" 
+                               Text="Cod Produs"
+                               HorizontalOptions="Center"/>
+                        <Label Grid.Column="1" 
+                               Grid.Row="0" 
+                               FontSize="Small" 
+                               Text="Denumire"
+                               HorizontalOptions="Center"/>
+                        <Label Grid.Column="2" 
+                               Grid.Row="0" 
+                               FontSize="Small" 
+                               Text="Cantitate"
+                               HorizontalOptions="Center"/>
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region List View (Table Items)-->
+                    <ListView x:Name="productsListView" HorizontalScrollBarVisibility="Default">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30*" />
+                                            <ColumnDefinition Width="30*" />
+                                            <ColumnDefinition Width="30*" />
+                                            <ColumnDefinition Width="10*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding ProductCode}"/>
+                                        <Label Grid.Column="1" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding ProductName}"/>
+                                        <Label Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Small" Text="{Binding ProductQuantity}"/>
+
+                                        <!-- Option One 
+                                        <Button Grid.Column="5" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="15" Text="{x:Static fontawesome:FontAwesomeIcons.Trash}" FontFamily="{StaticResource FontAwesomeSolid}" TextColor="Red"/>
+                                        -->
+
+                                        <!--Option Two -->
+                                        <Grid Grid.Column="3">
+                                            <Button x:Name="btnTrash" 
+                                                    VerticalOptions="CenterAndExpand" 
+                                                    HorizontalOptions="CenterAndExpand" 
+                                                    Clicked="RemoveElement" 
+                                                    BackgroundColor="Transparent" 
+                                                    CommandParameter="{Binding .}">
+                                                <Button.Triggers>
+                                                    <EventTrigger Event="MouseDown">
+                                                        <!--#TODO: Add Trigger Event-->
+                                                    </EventTrigger>
+                                                </Button.Triggers>
+                                            </Button>
+                                            <Label x:Name="lblTrashIcon" 
+                                                   VerticalOptions="Center" 
+                                                   HorizontalOptions="Center" 
+                                                   FontSize="15" 
+                                                   Text="{x:Static fontawesome:FontAwesomeIcons.Trash}" 
+                                                   FontFamily="{StaticResource FontAwesomeSolid}" 
+                                                   TextColor="Red"/>
+                                        </Grid>
+                                    </Grid>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <!--#endregion-->
+                </StackLayout>
+                <!--#endregion-->
+
+                <!--#region  Footer items-->
+                <Grid VerticalOptions="End"
+                        HorizontalOptions="CenterAndExpand"
+                        Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="30*" />
+                        <ColumnDefinition Width="30*" />
+                        <ColumnDefinition Width="30*" />
+                        <ColumnDefinition Width="5*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="btnScanner"
+                            Text="Scanati Produs"
+                            Clicked="CallScanPage"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Background="#99c2ff"
+                            BorderColor="Black"
+                            FontSize="12"
+                            BorderWidth="1"
+                            CornerRadius="25" 
+                            Grid.Column="2"/>
+
+                    <Button x:Name="btnSendServer"
+                            Text="Trimite Produse"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand" 
+                            Clicked="SendProductItems"
+                            Background="#99c2ff"
+                            BorderColor="Black"
+                            FontSize="12"
+                            BorderWidth="1"
+                            CornerRadius="25"
+                            Grid.Column="1"/>
+
+                    <Button x:Name="btnResetList"
+                            Text="Sterge Lista Produse"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Clicked="ResetProductList"
+                            Background="#99c2ff"
+                            BorderColor="Black"
+                            FontSize="12"
+                            BorderWidth="1"
+                            CornerRadius="25"
+                            Grid.Column="3"/>
+                </Grid>
+                <!--#endregion-->
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

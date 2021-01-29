@@ -73,8 +73,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VFPClasses\ProductDisplayFunctions.cs" />
+    <Compile Include="Miscellaneous\Miscellaneous.cs" />
+    <Compile Include="SerializationClasses\ItemClasses\ManagementUnit.cs" />
+    <Compile Include="SerializationClasses\ItemClasses\PartnerDisplay.cs" />
+    <Compile Include="SerializationClasses\ManagementUnitsDisplay.cs" />
+    <Compile Include="SerializationClasses\PartnersDisplay.cs" />
+    <Compile Include="SerializationClasses\ProductStocks.cs" />
+    <Compile Include="SerializationClasses\ItemClasses\ProductStock.cs" />
+    <Compile Include="VFPClasses\GeneralClasses\ManagementUnitFunctions.cs" />
+    <Compile Include="VFPClasses\GeneralClasses\PartnerFunctions.cs" />
+    <Compile Include="VFPClasses\GeneralClasses\ProductFunctions.cs" />
     <Compile Include="VFPClasses\QuantityFileFunctions.cs" />
+    <Compile Include="VFPClasses\SpecificClasses\QuantityFileFunctions.cs" />
     <Compile Include="VFPClasses\VFPConnection.cs" />
     <Compile Include="Miscellaneous\Decryptor.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -83,7 +93,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SerializationClasses\ProductDisplay.cs" />
-    <Compile Include="SerializationClasses\ProductQuantity.cs" />
+    <Compile Include="SerializationClasses\ItemClasses\ProductQuantity.cs" />
     <Compile Include="SerializationClasses\Quantities.cs" />
     <Compile Include="SerializationClasses\Serializer.cs" />
     <Compile Include="Settings.cs" />

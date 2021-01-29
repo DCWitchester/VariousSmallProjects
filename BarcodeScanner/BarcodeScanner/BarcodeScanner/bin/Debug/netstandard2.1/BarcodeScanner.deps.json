@@ -10,10 +10,10 @@
       "BarcodeScanner/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Scandit.BarcodePicker.Unified": "5.18.0.10",
+          "Scandit.BarcodePicker.Unified": "5.18.2.10",
           "Xam.Plugin.Iconize": "3.5.0.129",
           "Xam.Plugin.Iconize.FontAwesome": "3.5.0.129",
-          "Xamarin.Essentials": "1.5.3.2",
+          "Xamarin.Essentials": "1.6.0",
           "Xamarin.Forms": "4.8.0.1821",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1"
@@ -30,15 +30,15 @@
           }
         }
       },
-      "Scandit.BarcodePicker.Unified/5.18.0.10": {
+      "Scandit.BarcodePicker.Unified/5.18.2.10": {
         "runtime": {
           "lib/netstandard1.0/Scandit.BarcodePicker.Unified.Abstractions.dll": {
-            "assemblyVersion": "5.18.0.10",
-            "fileVersion": "5.18.0.10"
+            "assemblyVersion": "5.18.2.10",
+            "fileVersion": "5.18.2.10"
           },
           "lib/netstandard1.0/Scandit.BarcodePicker.Unified.dll": {
-            "assemblyVersion": "5.18.0.10",
-            "fileVersion": "5.18.0.10"
+            "assemblyVersion": "5.18.2.10",
+            "fileVersion": "5.18.2.10"
           }
         }
       },
@@ -73,7 +73,7 @@
           }
         }
       },
-      "Xamarin.Essentials/1.5.3.2": {
+      "Xamarin.Essentials/1.6.0": {
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
         },
@@ -143,12 +143,12 @@
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
-    "Scandit.BarcodePicker.Unified/5.18.0.10": {
+    "Scandit.BarcodePicker.Unified/5.18.2.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-uWy6jkRz9T0H/l/qykDiNP0AVUrFEHcVE+H5T26bvVvVzojeW2BuA0mGtjVkgv2j+DVWN3mSN3rLrkAKVl3oMw==",
-      "path": "scandit.barcodepicker.unified/5.18.0.10",
-      "hashPath": "scandit.barcodepicker.unified.5.18.0.10.nupkg.sha512"
+      "sha512": "sha512-Fy7s++Q+qD+0r1Me9iHlQDL2Jd5h+W7c2+VYMlEnsFpbJPS7Y2d80wFIcu6IHjfzVXqT7TKuQBza4v0GBBUtkA==",
+      "path": "scandit.barcodepicker.unified/5.18.2.10",
+      "hashPath": "scandit.barcodepicker.unified.5.18.2.10.nupkg.sha512"
     },
     "System.Numerics.Vectors/4.5.0": {
       "type": "package",
@@ -171,12 +171,12 @@
       "path": "xam.plugin.iconize.fontawesome/3.5.0.129",
       "hashPath": "xam.plugin.iconize.fontawesome.3.5.0.129.nupkg.sha512"
     },
-    "Xamarin.Essentials/1.5.3.2": {
+    "Xamarin.Essentials/1.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BSLgDJUOPFRwTpQaftM+s4qb/MsTjrqXulEYDOcK6KF3i0Orf75zo3RwRfqnQ8WfpoEFxW/v0jgcPWCvOMgHxg==",
-      "path": "xamarin.essentials/1.5.3.2",
-      "hashPath": "xamarin.essentials.1.5.3.2.nupkg.sha512"
+      "sha512": "sha512-geJYnjTyPv2npClIkBxLXk9cOV9CPwj/oayA8I4+6NpZc/dIiYxax36m25SW8TrCMR/rvyY44fZBjWBvj7BCQQ==",
+      "path": "xamarin.essentials/1.6.0",
+      "hashPath": "xamarin.essentials.1.6.0.nupkg.sha512"
     },
     "Xamarin.Forms/4.8.0.1821": {
       "type": "package",

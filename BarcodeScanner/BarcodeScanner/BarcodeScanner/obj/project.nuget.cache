@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "L4N1E34oeKDrv+fgWd6ZSh6EzDvELjrvF3vQhOoURbqe0vNtkZcnaMjPOadZU6/kDG7kMggUMfZeWdcZ7iGR0Q==",
+  "dgSpecHash": "uYz5O1NV00WiCFZaRGSVgPzxsnMeZXBOJmsnu1dbcyplGS5/4ehC/9SwepJiDLkPLD6bjYgRDXDk10gVCwdMuQ==",
   "success": true,
   "projectFilePath": "F:\\VariousProjects\\VariousSmallProjects\\BarcodeScanner\\BarcodeScanner\\BarcodeScanner\\BarcodeScanner.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DCW\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\DCW\\.nuget\\packages\\scandit.barcodepicker.unified\\5.18.0.10\\scandit.barcodepicker.unified.5.18.0.10.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\scandit.barcodepicker.unified\\5.18.2.10\\scandit.barcodepicker.unified.5.18.2.10.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\xam.plugin.iconize\\3.5.0.129\\xam.plugin.iconize.3.5.0.129.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\xam.plugin.iconize.fontawesome\\3.5.0.129\\xam.plugin.iconize.fontawesome.3.5.0.129.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\xamarin.essentials\\1.6.0\\xamarin.essentials.1.6.0.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\xamarin.forms\\4.8.0.1821\\xamarin.forms.4.8.0.1821.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\zxing.net.mobile\\2.4.1\\zxing.net.mobile.2.4.1.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\zxing.net.mobile.forms\\2.4.1\\zxing.net.mobile.forms.2.4.1.nupkg.sha512"
