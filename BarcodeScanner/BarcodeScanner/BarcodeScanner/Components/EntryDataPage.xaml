@@ -99,7 +99,8 @@
                             <Button x:Name="btnManagementUnitSearch" 
                                                     VerticalOptions="CenterAndExpand" 
                                                     HorizontalOptions="CenterAndExpand" 
-                                                    BackgroundColor="Transparent">
+                                                    BackgroundColor="Transparent"
+                                                    Clicked="SelectManagementUnit">
                                 <Button.Triggers>
                                     <EventTrigger Event="MouseDown">
                                         <!--#TODO: Add Trigger Event-->

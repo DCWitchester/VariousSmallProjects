@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "CR4q6+W55zGHs/Z//6khn2Dip78j/iluoonrBE+dNK4Y528XPwtx+e+mLSGc3az+W/62yio6SkKn9EnsTVpBhQ==",
+  "dgSpecHash": "53bsx2aCG/yfpnQmLHQpABHvN+W3SulApLtRoA22BUvzvgCbXeYLPXvS71qZGvNDYNIBBFXf7xPy+aRfFo+A3Q==",
   "success": true,
   "projectFilePath": "F:\\VariousProjects\\VariousSmallProjects\\BarcodeScanner\\BarcodeScanner\\BarcodeScanner.Android\\BarcodeScanner.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DCW\\.nuget\\packages\\fastandroidcamera\\2.0.0\\fastandroidcamera.2.0.0.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\plugin.permissions\\6.0.1\\plugin.permissions.6.0.1.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\scandit.barcodepicker.unified\\5.18.2.10\\scandit.barcodepicker.unified.5.18.2.10.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\scandit.barcodepicker.xamarin\\5.18.2.10\\scandit.barcodepicker.xamarin.5.18.2.10.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",

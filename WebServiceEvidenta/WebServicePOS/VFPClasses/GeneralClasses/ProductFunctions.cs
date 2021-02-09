@@ -256,6 +256,69 @@ namespace WebServiceEvidenta.VFPClasses.GeneralClasses
             //before finally returning the result.
             return xmlDocument;
         }
+
+        public XmlDocument getProductInfo(String productCode)
+        {
+            String command = "SELECT sf.codp, pg.denm, sf.gest, mug.deng, pg.fuben, prg.denfb, sf.pv, sf.cant " +
+                                $"FROM '{base.StockFile}' as sf " +
+                                $"LEFT JOIN '{base.ProductGlossary}' as pg " +
+                                    $"ON sf.codp == pg.codp " +
+                                $"LEFT JOIN '{base.ManagementUnitGlossary}' as mug " +
+                                    $"ON sf.gest == mug.gest " +
+                                $"LEFT JOIN '{base.PartnerGlossary}' as prg " +
+                                    $"ON pg.fuben == prg.fuben " +
+                                $"WHERE ( UPPER(ALLTRIM(pg.codp)) == '{productCode.Trim()}' " +
+                                    $"OR LEFT(UPPER(ALLTRIM(pg.codext)),12) == '{productCode.Trim()}' ) " +
+                                $"ORDER BY sf.gest" ;
+            //we initialize a new command
+            System.Data.OleDb.OleDbCommand oCmd = base.FileBaseConnection.CreateCommand();
+            //then set the command text for the ole object
+            oCmd.CommandText = command;
+            //then initialize a new dataTable
+            DataTable dt = new DataTable();
+            //we try to open the connection on the base class
+            if (!base.OpenConnection()) return null;
+            try
+            {
+                //and load it from the reader
+                dt.Load(oCmd.ExecuteReader());
+            }
+            catch { return null; }
+            finally
+            {
+                //always remember the fifth of november
+                //oh, and to close your connection
+                base.CloseConnection();
+            }
+            //and set a name for the table just because I can
+            dt.TableName = "Stocuri";
+            //we check the rows 
+            if (dt == null || dt.Rows.Count < 1) return null;
+            //we initialize a new productDisplay  
+            SerializationClasses.ProductStockDisplay productStocks = new SerializationClasses.ProductStockDisplay();
+            //then we will retrieve the data from the table and fill the object
+            productStocks.GetDisplayItemsFromDataTable(dt);
+            //we initialize a serializer over tge ProductDisplay classes
+            XmlSerializer serializer = new XmlSerializer(typeof(SerializationClasses.ProductStockDisplay));
+            //we initialize a resultString
+            String result = String.Empty;
+            //then using a memoryStream
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                //we serialize the object onto the memoryStream
+                serializer.Serialize(memoryStream, productStocks);
+                //then place myself at the start of the stream
+                memoryStream.Position = 0;
+                //and dump the string into the result string
+                result = new StreamReader(memoryStream).ReadToEnd();
+            }
+            //we create a new XmlDocument
+            XmlDocument xmlDocument = new XmlDocument();
+            //and load it from the resulted string
+            xmlDocument.LoadXml(result);
+            //before finally returning the result.
+            return xmlDocument;
+        }
         #endregion
     }
 }

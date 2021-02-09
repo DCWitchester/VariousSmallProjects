@@ -59,20 +59,19 @@
                 </Grid>
             </Grid>
 
-            <Grid Grid.Row="1" 
-                  HorizontalOptions="CenterAndExpand" 
-                  VerticalOptions="CenterAndExpand">
+            <Grid Grid.Row="1"
+                  VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand">
                 <zxing:ZXingScannerView x:Name="scanView"
-                                        Grid.Row="1"
                                         OnScanResult="scanView_OnScanResult"
                                         IsScanning="True"
+                                        IsAnalyzing="True"
                                         WidthRequest="300"
                                         HeightRequest="500"
-                                        VerticalOptions="CenterAndExpand"
-                                        HorizontalOptions="CenterAndExpand"/>
+                                        VerticalOptions="FillAndExpand"
+                                        HorizontalOptions="FillAndExpand"/>
                 <zxing:ZXingDefaultOverlay TopText="Scanati un cod de bare"/>
             </Grid>
-            
             <Button x:Name="btnReturn"
                     Grid.Row="2"
                     Text = "Renunta" 

@@ -34,20 +34,17 @@ namespace BarcodeScanner
 
         public async void ForwardPage()
         {
-            Backbone.BarcodeScannerController.PublicSettings.AdminControl = false;
-            Backbone.BarcodeScannerController.PublicSettings.UseBatches = true;
-
             if (Backbone.BarcodeScannerController.PublicSettings.AdminControl)
             {
                 //TODO => forward to Admin Control
             }
             else if (Backbone.BarcodeScannerController.PublicSettings.UseBatches)
             {
-                await Navigation.PushModalAsync(new Components.StorageServiceWithBatchesPage(instanceController), Animation.IsEnabled);
+                await Navigation.PushAsync(new Components.StorageServiceWithBatchesPage(instanceController), Animation.IsEnabled);
             }
             else
             {
-                await Navigation.PushModalAsync(new Components.StorageServiceWithoutBatchesPage(instanceController), Animation.IsEnabled);
+                await Navigation.PushAsync(new Components.StorageServiceWithoutBatchesPage(instanceController), Animation.IsEnabled);
             }
         }
     }

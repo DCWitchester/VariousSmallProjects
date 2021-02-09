@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:FontAwesome"
+             xmlns:zxing ="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="BarcodeScanner.Components.AdminScannerPage"
+             Title="Main Admin Page"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="90*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="grHeader" Grid.Row="0" Grid.Column="0"
+                  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                  BackgroundColor="#99c2ff">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Margin="10,5,0,0" Grid.Column="0" 
+                       FontSize="Large" 
+                       VerticalOptions="CenterAndExpand"
+                       Text="Mentor Depozit - Scanner Admin"
+                       TextColor="Black"/>
+                <Grid Grid.Column="1">
+                    <Label x:Name="lblSettingsIcon"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           FontSize="25"
+                           Text="{x:Static fontawesome:FontAwesomeIcons.Cog}"
+                           FontFamily="{StaticResource FontAwesomeSolid}" TextColor="Black"/>
+                    <Button x:Name="btnSettingsIcon"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="CenterAndExpand"
+                            BackgroundColor="Transparent"
+                            Clicked="CallSettings"/>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1"
+                      VerticalOptions="FillAndExpand"
+                      HorizontalOptions="FillAndExpand">
+                <zxing:ZXingScannerView x:Name="scanView"
+                                            IsScanning="True"
+                                            IsAnalyzing="True"
+                                            WidthRequest="300"
+                                            HeightRequest="300"
+                                            VerticalOptions="FillAndExpand"
+                                            HorizontalOptions="FillAndExpand"/>
+                <zxing:ZXingDefaultOverlay TopText="Scanati un cod de bare"/>
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

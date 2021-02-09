@@ -41,13 +41,13 @@ namespace BarcodeScanner.Components
         {
             instanceController.EntryDocument.SetPartnerCodeAndName((e.SelectedItem as XmlClasses.PartnerDisplay).PartnerCode, 
                                                                     (e.SelectedItem as XmlClasses.PartnerDisplay).PartnerName);
-            instanceController.PageNavigation.PopModalAsync(Animation.IsEnabled);
+            instanceController.PageNavigation.PopAsync(Animation.IsEnabled);
             
         }
 
         public void LeavePage(Object sender, EventArgs e)
         {
-            instanceController.PageNavigation.PopModalAsync(Animation.IsEnabled);
+            instanceController.PageNavigation.PopAsync(Animation.IsEnabled);
         }
         #endregion
     }

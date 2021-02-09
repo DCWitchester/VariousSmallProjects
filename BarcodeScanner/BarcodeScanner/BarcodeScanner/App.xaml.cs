@@ -14,7 +14,9 @@ namespace BarcodeScanner
                                     .With(new Plugin.Iconize.Fonts.FontAwesomeBrandsModule())
                                     .With(new Plugin.Iconize.Fonts.FontAwesomeSolidModule());
 
-            MainPage = new NavigationPage(new MainPage());
+            Backbone.BarcodeScannerController instanceController = new Backbone.BarcodeScannerController();
+            SetPage(instanceController);
+            //MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
@@ -28,6 +30,27 @@ namespace BarcodeScanner
 
         protected override void OnResume()
         {
+        }
+
+        protected void SetPage(Backbone.BarcodeScannerController instanceController)
+        {
+            Backbone.BarcodeScannerController.PublicSettings.AdminControl = true;
+            if (Backbone.BarcodeScannerController.PublicSettings.AdminControl)
+            {
+
+                Backbone.AdminController.PublicSettings = Backbone.BarcodeScannerController.PublicSettings;
+                Backbone.AdminController.DefaultSettings = Backbone.BarcodeScannerController.DefaultSettings;
+                //TODO => forward to Admin Control
+                MainPage = new NavigationPage(new Components.AdminScannerPage());
+            }
+            else if (Backbone.BarcodeScannerController.PublicSettings.UseBatches)
+            {
+                MainPage = new NavigationPage(new Components.StorageServiceWithBatchesPage(instanceController));
+            }
+            else
+            {
+                MainPage = new NavigationPage(new Components.StorageServiceWithoutBatchesPage(instanceController));
+            }
         }
     }
 }

@@ -37,10 +37,11 @@ namespace BarcodeScanner.Components
         {
             InitializeComponent();
             instanceController = barcodeScannerController;
+            instanceController.PageNavigation = this.Navigation;
             //then set the item source to the list object
             productsListView.ItemsSource = instanceController.Products;
             //TODO: Delete later
-            AddElementsToList();
+            //AddElementsToList();
         }
         #endregion
 
@@ -53,7 +54,7 @@ namespace BarcodeScanner.Components
         private async void CallScanPage(object sender, EventArgs e)
         {
             //will call the navigation to the scanner page
-            await instanceController.PageNavigation.PushModalAsync(new PageScanner(instanceController), IsEnabled);
+            await instanceController.PageNavigation.PushAsync(new PageScanner(instanceController), IsEnabled);
         }
 
         /// <summary>
@@ -63,7 +64,7 @@ namespace BarcodeScanner.Components
         /// <param name="e">Click Event</param>
         private async void SendProductItems(object sender, EventArgs e)
         {
-            await instanceController.PageNavigation.PushModalAsync(new EntryDataPage(instanceController), IsEnabled);
+            await instanceController.PageNavigation.PushAsync(new EntryDataPage(instanceController), IsEnabled);
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace BarcodeScanner.Components
         /// <param name="e">Click Event</param>
         private async void CallSettings(object sender, EventArgs e)
         {
-            await instanceController.PageNavigation.PushModalAsync(new Components.SettingsPage(instanceController), IsEnabled);
+            await instanceController.PageNavigation.PushAsync(new Components.SettingsPage(instanceController), IsEnabled);
         }
         #endregion
 

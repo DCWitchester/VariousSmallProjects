@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[12.0.3, )"
             },
+            "Plugin.Permissions": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Scandit.BarcodePicker.Unified": {
               "target": "Package",
               "version": "[5.18.2.10, )"
@@ -92,7 +96,7 @@
       }
     },
     "F:\\VariousProjects\\VariousSmallProjects\\BarcodeScanner\\BarcodeScanner\\BarcodeScanner\\BarcodeScanner.csproj": {
-      "version": "1.0.0",
+      "version": "1.7.1.2080",
       "restore": {
         "projectUniqueName": "F:\\VariousProjects\\VariousSmallProjects\\BarcodeScanner\\BarcodeScanner\\BarcodeScanner\\BarcodeScanner.csproj",
         "projectName": "BarcodeScanner",

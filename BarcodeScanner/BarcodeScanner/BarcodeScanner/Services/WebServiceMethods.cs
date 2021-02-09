@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using BarcodeScanner.ObjectClasses;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,10 +18,9 @@ namespace BarcodeScanner.Services
         public static String GetProductName(String productCode)
         {
             HttpClient http = new HttpClient();
-            String xmlDocument = http.GetStringAsync(WebMethods.GetProductDetails + productCode.Substring(0,12)).Result;
+            String xmlDocument = http.GetStringAsync(WebMethods.GetProductDetails + (productCode.Length > 12 ? productCode.Substring(0, 12) : productCode)).Result;
             //and deserialize the object to the needed structure
-            return DeserializeProductDisplayDocument(xmlDocument);
-                        
+            return DeserializeProductDisplayDocument(xmlDocument);                     
         }
 
         public static String GetManagementUnitName(String managementUnitCode)
@@ -29,7 +29,7 @@ namespace BarcodeScanner.Services
             //we initialize a string for containing the retrieved xmlDocuments
             try
             {
-                String xmlDocument = http.GetStringAsync(WebMethods.GetManagementUnitDisplay + managementUnitCode.Substring(0, 4)).Result;
+                String xmlDocument = http.GetStringAsync(WebMethods.GetManagementUnitDisplay + (managementUnitCode.Length > 4 ? managementUnitCode.Substring(0, 4) : managementUnitCode.Trim())).Result;
                 return DeserializeManagementUnitDisplayDocument(xmlDocument);
             }
             catch { return null; }
@@ -40,7 +40,7 @@ namespace BarcodeScanner.Services
             HttpClient http = new HttpClient();
             try
             {
-                String xmlDocument = http.GetStringAsync(WebMethods.GetPartnerDisplay + partnerCode.Substring(0, 4)).Result;
+                String xmlDocument = http.GetStringAsync(WebMethods.GetPartnerDisplay + (partnerCode.Length > 4 ? partnerCode.Substring(0, 4) : partnerCode.Trim())).Result;
                 return DeserializePartnerDisplayDocument(xmlDocument);
             }
             catch { return null; }
@@ -67,6 +67,17 @@ namespace BarcodeScanner.Services
         {
             HttpClient httpClient = new HttpClient();
             httpClient.GetAsync(WebMethods.SetProductQuantity + json);
+        }
+
+        public static ProductStockDisplay GetProductInfo(String productCode)
+        {
+            HttpClient http = new HttpClient();
+            try
+            {
+                String xmlDocument = http.GetStringAsync(WebMethods.GetProductInfo + (productCode.Length > 12 ? productCode.Substring(0, 12) : productCode)).Result;
+                return DeserializeProductStockDisplayDocument(xmlDocument);
+            }
+            catch { return null; }
         }
         #endregion
 
@@ -154,6 +165,19 @@ namespace BarcodeScanner.Services
                 partner = (XmlClasses.PartnerDisplay)serializer.Deserialize(reader);
             }
             return partner.PartnerName;
+        }
+
+        private static ProductStockDisplay DeserializeProductStockDisplayDocument(String xmlDocument)
+        {
+            //we initialize a serializer over the menu object
+            XmlSerializer serializer = new XmlSerializer(typeof(ProductStockDisplay));
+            ProductStockDisplay productStockDisplay = new ProductStockDisplay();
+            using (TextReader reader = new StringReader(xmlDocument))
+            {
+                //we deserialize the meniu to a class
+                productStockDisplay = (ProductStockDisplay)serializer.Deserialize(reader);
+            }
+            return productStockDisplay;
         }
         #endregion
 

@@ -42,6 +42,11 @@ namespace BarcodeScanner.Backbone
         /// the entry document for the instance
         /// </summary>
         protected EntryDocument entryDocument { get; set; } = new EntryDocument();
+
+        /// <summary>
+        /// the onChange Action Caller => will contain the invocable action on page refresh
+        /// </summary>
+        public event Action OnResetItemList;
 #pragma warning restore IDE1006 // Naming Styles
 
         #endregion
@@ -144,7 +149,7 @@ namespace BarcodeScanner.Backbone
         public void ResetInstanceElements()
         {
             barcode = new Barcode();
-            products = new ObservableCollection<Products>();
+            products.Clear();
             entryDocument = new EntryDocument();
         }
         #endregion

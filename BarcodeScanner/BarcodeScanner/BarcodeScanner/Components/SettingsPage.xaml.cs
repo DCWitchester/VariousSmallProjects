@@ -120,7 +120,7 @@ namespace BarcodeScanner.Components
         /// </summary>
         public void ReturnToCaller()
         {
-            instanceController.PageNavigation.PopModalAsync(Animation.IsEnabled);
+            instanceController.PageNavigation.PopAsync(Animation.IsEnabled);
         }
 
         #region Display Functionality

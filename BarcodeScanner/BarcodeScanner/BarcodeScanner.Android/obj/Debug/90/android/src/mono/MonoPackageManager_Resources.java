@@ -9,6 +9,7 @@ public class MonoPackageManager_Resources {
 		"Newtonsoft.Json.dll",
 		"Plugin.Iconize.dll",
 		"Plugin.Iconize.FontAwesome.dll",
+		"Plugin.Permissions.dll",
 		"Scandit.BarcodePicker.Unified.Abstractions.dll",
 		"Scandit.BarcodePicker.Unified.dll",
 		"ScanditSDK.dll",
@@ -62,5 +63,5 @@ public class MonoPackageManager_Resources {
 	};
 	public static String[] Dependencies = new String[]{
 	};
-	public static String ApiPackageName = "Mono.Android.Platform.ApiLevel_28";
+	public static String ApiPackageName = null;
 }

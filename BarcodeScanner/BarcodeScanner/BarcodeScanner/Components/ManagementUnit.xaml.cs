@@ -38,11 +38,11 @@ namespace BarcodeScanner.Components
         {
             instanceController.EntryDocument.SetManagementUnitCodeAndName((e.SelectedItem as XmlClasses.ManagementUnit).ManagementUnitCode,
                                                                             (e.SelectedItem as XmlClasses.ManagementUnit).ManagementUnitName);
-            instanceController.PageNavigation.PopModalAsync(Animation.IsEnabled);
+            instanceController.PageNavigation.PopAsync(Animation.IsEnabled);
         }
         public void LeavePage(Object sender, EventArgs e)
         {
-            instanceController.PageNavigation.PopModalAsync(Animation.IsEnabled);
+            instanceController.PageNavigation.PopAsync(Animation.IsEnabled);
         }
         #endregion
     }

@@ -9,6 +9,7 @@ namespace BarcodeScanner.Services
         #region Get Functions
         public static String GetProductDetails              => Backbone.BarcodeScannerController.PublicSettings.StorageService + "/GetProductName?ProductCode=";
         public static String GetProductStock                => Backbone.BarcodeScannerController.PublicSettings.StorageService + "/GetProductStock?ProductCode=";
+        public static String GetProductInfo                 => Backbone.BarcodeScannerController.PublicSettings.StorageService + "/GetProductInfo?ProductCode=";
         public static String GetProductStockViaExternalCode => Backbone.BarcodeScannerController.PublicSettings.StorageService + "/GetProductStockViaExternalCode?ProductCode=";
         public static String GetPartnerDisplay              => Backbone.BarcodeScannerController.PublicSettings.StorageService + "/GetPartnerDisplay?PartnerCode=";
         public static String GetPartnersDisplay             => Backbone.BarcodeScannerController.PublicSettings.StorageService + "/GetPartnersDisplay";

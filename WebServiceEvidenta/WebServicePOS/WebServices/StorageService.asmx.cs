@@ -57,6 +57,15 @@ namespace WebServiceEvidenta.WebServices
         }
 
         [WebMethod]
+        public XmlDocument GetProductInfo(String ProductCode)
+        {
+            using (ProductFunctions vfp = new ProductFunctions())
+            {
+                return vfp.getProductInfo(ProductCode);
+            }
+        }
+
+        [WebMethod]
         public XmlDocument GetPartnerDisplay(String PartnerCode)
         {
             using (PartnerFunctions vfp = new PartnerFunctions())

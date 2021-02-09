@@ -250,7 +250,7 @@
           "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
         }
       },
-      "BarcodeScanner/1.0.0": {
+      "BarcodeScanner/1.7.1.2080": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
@@ -520,7 +520,7 @@
           "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
         }
       },
-      "BarcodeScanner/1.0.0": {
+      "BarcodeScanner/1.7.1.2080": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
@@ -790,7 +790,7 @@
           "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
         }
       },
-      "BarcodeScanner/1.0.0": {
+      "BarcodeScanner/1.7.1.2080": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
@@ -1060,7 +1060,7 @@
           "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
         }
       },
-      "BarcodeScanner/1.0.0": {
+      "BarcodeScanner/1.7.1.2080": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
@@ -1679,7 +1679,7 @@
         "zxing.net.mobile.forms.nuspec"
       ]
     },
-    "BarcodeScanner/1.0.0": {
+    "BarcodeScanner/1.7.1.2080": {
       "type": "project",
       "path": "../BarcodeScanner/BarcodeScanner.csproj",
       "msbuildProject": "../BarcodeScanner/BarcodeScanner.csproj"
@@ -1687,7 +1687,7 @@
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
-      "BarcodeScanner >= 1.0.0",
+      "BarcodeScanner >= 1.7.1.2080",
       "Newtonsoft.Json >= 12.0.3",
       "Scandit.BarcodePicker.Unified >= 5.18.2.10",
       "Xam.Plugin.Iconize >= 3.5.0.129",

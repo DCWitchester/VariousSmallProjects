@@ -64,7 +64,7 @@ namespace BarcodeScanner.Components
         {
             String json = this.instanceController.GetQuantitiesJsonFile;
             WebServiceMethods.SendProductQunatitites(this.instanceController.GetQuantitiesJsonFile);
-            entryDocument = new EntryDocument();
+            instanceController.ResetInstanceElements();
             ReturnToMainPage();
         }
 
@@ -76,19 +76,19 @@ namespace BarcodeScanner.Components
 
         public void SelectPartner(object sender, EventArgs e)
         {
-            instanceController.PageNavigation.PushModalAsync(new PartnerSelect(instanceController), Animation.IsEnabled);
+            instanceController.PageNavigation.PushAsync(new PartnerSelect(instanceController), Animation.IsEnabled);
         }
 
         public void SelectManagementUnit(object sender, EventArgs e)
         {
-            instanceController.PageNavigation.PushModalAsync(new ManagementUnit(instanceController), Animation.IsEnabled);
+            instanceController.PageNavigation.PushAsync(new ManagementUnit(instanceController), Animation.IsEnabled);
         }
         #endregion
 
         #region Functionality
         private void ReturnToMainPage()
         {
-            this.instanceController.PageNavigation.PopModalAsync(Animation.IsEnabled);
+            this.instanceController.PageNavigation.PopAsync(Animation.IsEnabled);
         }
         private void InitializeRefreshAction()
         {

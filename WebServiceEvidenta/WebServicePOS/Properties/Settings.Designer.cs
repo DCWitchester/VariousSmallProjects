@@ -25,8 +25,8 @@ namespace WebServiceEvidenta.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("pLA0QHx18UXUjcZ9j8E5cvkqH4R+6wRENDBV4GBkTFX8MAVHzEbcvKYAexfFQ/8/v6s/8Ay7eNkvNK2lE" +
-            "xn82+fLCSp3BOIgS9acQCaqRnE=")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0lNJZFNtN0YG8utXgAhJAh6S38it34qgmyJchcjldbh+8eFE1tRY6PlQVek7Q2gyzlM5gLVmV21Lxk/6h" +
+            "hIr9Q==JAuYaKjfc7A=")]
         public string CaleEvidenta {
             get {
                 return ((string)(this["CaleEvidenta"]));

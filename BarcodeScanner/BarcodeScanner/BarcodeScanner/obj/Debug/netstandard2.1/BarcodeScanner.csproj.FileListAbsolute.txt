@@ -39,6 +39,9 @@ F:\VariousProjects\VariousSmallProjects\BarcodeScanner\BarcodeScanner\BarcodeSca
 F:\VariousProjects\VariousSmallProjects\BarcodeScanner\BarcodeScanner\BarcodeScanner\bin\Debug\netstandard2.1\BarcodeScanner.pdb
 F:\VariousProjects\VariousSmallProjects\BarcodeScanner\BarcodeScanner\BarcodeScanner\obj\Debug\netstandard2.1\BarcodeScanner.csprojAssemblyReference.cache
 F:\VariousProjects\VariousSmallProjects\BarcodeScanner\BarcodeScanner\BarcodeScanner\obj\Debug\netstandard2.1\App.xaml.g.cs
+F:\VariousProjects\VariousSmallProjects\BarcodeScanner\BarcodeScanner\BarcodeScanner\obj\Debug\netstandard2.1\Components\AdminDisplay.xaml.g.cs
+F:\VariousProjects\VariousSmallProjects\BarcodeScanner\BarcodeScanner\BarcodeScanner\obj\Debug\netstandard2.1\Components\AdminScannerPage.xaml.g.cs
+F:\VariousProjects\VariousSmallProjects\BarcodeScanner\BarcodeScanner\BarcodeScanner\obj\Debug\netstandard2.1\Components\AdminSettingsPage.xaml.g.cs
 F:\VariousProjects\VariousSmallProjects\BarcodeScanner\BarcodeScanner\BarcodeScanner\obj\Debug\netstandard2.1\Components\EntryDataPage.xaml.g.cs
 F:\VariousProjects\VariousSmallProjects\BarcodeScanner\BarcodeScanner\BarcodeScanner\obj\Debug\netstandard2.1\Components\ManagementUnit.xaml.g.cs
 F:\VariousProjects\VariousSmallProjects\BarcodeScanner\BarcodeScanner\BarcodeScanner\obj\Debug\netstandard2.1\Components\PartnerSelect.xaml.g.cs

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.barcodescanner" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2097" android:versionName="1.7.3" package="com.mentorsoft.barcodescanner" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="23" android:targetSdkVersion="28" />
 	<application android:label="BarcodeScanner.Android" android:usesCleartextTraffic="true" android:theme="@style/MainTheme"></application>
 	<!--#region Permissions-->

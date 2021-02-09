@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ZXing;
@@ -60,7 +59,7 @@ namespace BarcodeScanner.Components
         /// </summary>
         /// <param name="result">the scanner result</param>
         /// <returns>the current Task</returns>
-        public async Task GetQuantity(Result result)
+        private async Task GetQuantity(Result result)
         {
             String quantity = await DisplayPromptAsync("Cantitate", "Introduceti cantitatea:", keyboard: Keyboard.Numeric);
             String lot = String.Empty;
@@ -81,7 +80,7 @@ namespace BarcodeScanner.Components
                 ProductBatchDate = Regex.Replace(date,"[^0-9.]","")
             });
             scanView.IsScanning = true;
-            await instanceController.PageNavigation.PopModalAsync(Animation.IsEnabled);
+            await instanceController.PageNavigation.PopAsync(Animation.IsEnabled);
         }
 
         /// <summary>
@@ -92,14 +91,25 @@ namespace BarcodeScanner.Components
         public async Task GetQuantity(String result)
         {
             String quantity = await DisplayPromptAsync("Cantitate", "Introduceti cantitatea:", keyboard: Keyboard.Numeric);
+            String lot = String.Empty;
+            String date = String.Empty;
+            if (Backbone.BarcodeScannerController.PublicSettings.UseBatches)
+            {
+                lot = await DisplayPromptAsync("Cantitate", "Introduceti lotul:", keyboard: Keyboard.Default);
+                date = await DisplayPromptAsync("Cantitate", "Introduceti data (zz.ll.aaaa) lotului:", keyboard: Keyboard.Default);
+            }
+
             instanceController.Products.Add(new ObjectClasses.Products
             {
                 ID = instanceController.Products.Count + 1,
                 ProductName = Services.WebServiceMethods.GetProductName(result),
                 ProductCode = result,
-                ProductQuantity = quantity
+                ProductQuantity = quantity,
+                ProductBatch = lot,
+                ProductBatchDate = Regex.Replace(date, "[^0-9.]", "")
             });
-            await instanceController.PageNavigation.PopModalAsync(Animation.IsEnabled);
+            scanView.IsScanning = true;
+            await instanceController.PageNavigation.PopAsync(Animation.IsEnabled);
         }
 
         /// <summary>
@@ -109,9 +119,19 @@ namespace BarcodeScanner.Components
         /// <param name="e">the click event</param>
         private void ReturnToMainPage(object sender, EventArgs e)
         {
-            instanceController.PageNavigation.PopModalAsync(Animation.IsEnabled);
+            instanceController.PageNavigation.PopAsync(Animation.IsEnabled);
         }
 
+        /// <summary>
+        /// **DEPRECATED**
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TestScanner(object sender, EventArgs e)
+        {
+            scanView.IsScanning = false;
+            Device.BeginInvokeOnMainThread(async () => await GetQuantity("5449000016669"));
+        }
         #endregion
     }
 }
