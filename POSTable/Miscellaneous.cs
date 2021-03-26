@@ -14,17 +14,13 @@ namespace POSTable
         /// <returns>the background image</returns>
         public static String SetBackgroundImage()
         {
-            switch (Settings.PublicSettings.DisplayMode)
+            return Settings.PublicSettings.DisplayMode switch
             {
-                case Settings.DisplayMode.Night:
-                    return "url('images/menu_background_night.jpg')";
-                case Settings.DisplayMode.Light:
-                    return "url('images/menu_background_light.jpg')";
-                case Settings.DisplayMode.Picnic:
-                    return "url('images/menu_background_picnic.jpg')";
-                default:
-                    return "url('images/menu_background_night.jpg')";
-            }
+                Settings.DisplayMode.Night => "url('images/menu_background_night.jpg')",
+                Settings.DisplayMode.Light => "url('images/menu_background_light.jpg')",
+                Settings.DisplayMode.Picnic => "url('images/menu_background_picnic.jpg')",
+                _ => "url('images/menu_background_night.jpg')",
+            };
         }
 
         /// <summary>
@@ -33,13 +29,11 @@ namespace POSTable
         /// <returns>the color string</returns>
         public static String SetForegroundColor()
         {
-            switch (Settings.PublicSettings.DisplayMode)
+            return Settings.PublicSettings.DisplayMode switch
             {
-                case Settings.DisplayMode.Light:
-                    return "black";
-                default:
-                    return "white";
-            }
+                Settings.DisplayMode.Light => "black",
+                _ => "white",
+            };
         }
 
         /// <summary>
@@ -48,15 +42,22 @@ namespace POSTable
         /// <returns>the current currency for the price</returns>
         public static String SetCurrency()
         {
-            switch (Settings.PublicSettings.Currency)
+            return Settings.PublicSettings.Currency switch
             {
-                case Settings.Currency.Euro:
-                    return "€";
-                case Settings.Currency.Dollar:
-                    return "$";
-                default:
-                    return "Lei";
-            }
+                Settings.Currency.Euro => "€",
+                Settings.Currency.Dollar => "$",
+                _ => "Lei",
+            };
+        }
+
+        /// <summary>
+        /// this function will convert a number of seconds to the equivalent milliseconds
+        /// </summary>
+        /// <param name="seconds">the given seconds</param>
+        /// <returns>the milliseconds contained in the seconds</returns>
+        public static Double GetMillisecondOfSeconds(Double seconds)
+        {
+            return TimeSpan.FromSeconds(seconds).TotalMilliseconds;
         }
     }
 }

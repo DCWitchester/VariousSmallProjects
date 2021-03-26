@@ -43,18 +43,27 @@ namespace BarcodeScanner.Backbone
             set => pageNavigation = value;
         }
 
+        /// <summary>
+        /// the caller for the Default Settings
+        /// </summary>
         public static PublicSettings DefaultSettings
         {
             get => defaultSettings;
             set => defaultSettings = value;
         }
 
+        /// <summary>
+        /// the caller for the Public Settings
+        /// </summary>
         public static PublicSettings PublicSettings
         {
             get => userSettings;
             set => userSettings = value;
         }
 
+        /// <summary>
+        /// the caller for the Product Stock Display
+        /// </summary>
         public ProductStockDisplay ProductStockDisplay
         {
             get => productStockDisplay;
@@ -63,15 +72,25 @@ namespace BarcodeScanner.Backbone
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// the initial contructor without any parameters
+        /// </summary>
         public AdminController()
         {
             ProductStockDisplay = new ProductStockDisplay();
             GetUserSettings();
         }
+        /// <summary>
+        /// the initial constructor that receives the inavigation from the caller page on call
+        /// </summary>
+        /// <param name="navigation">the inavigation used for the navigation between the various pages <para/> For more info check the INavigation Explanation within the bookmarks</param>
         public AdminController(INavigation navigation)
         {
+            //we initialize the product stock display
             ProductStockDisplay = new ProductStockDisplay();
+            //the main navigation controller
             PageNavigation = navigation;
+            //then we retrieve the user settings
             GetUserSettings();
         }
         #endregion
@@ -82,6 +101,7 @@ namespace BarcodeScanner.Backbone
         /// </summary>
         public static void GetUserSettings()
         {
+            //the setting are retrieved by their static key values, and defaults are offered to make sure we don't get null references or other specific errors
             userSettings.AdminControl   = Preferences.Get(SettingsKeys.AdminControl, defaultValue: defaultSettings.AdminControl);
             userSettings.WebServicePath = Preferences.Get(SettingsKeys.WebServicePath, defaultValue: defaultSettings.WebServicePath);
             userSettings.UseBatches     = Preferences.Get(SettingsKeys.UseBatches, defaultValue: defaultSettings.UseBatches);
@@ -93,6 +113,7 @@ namespace BarcodeScanner.Backbone
         /// </summary>
         public static void SetUserSettings()
         {
+            //the settings are set by their static key values
             Preferences.Set(SettingsKeys.AdminControl, userSettings.AdminControl);
             Preferences.Set(SettingsKeys.UseBatches, userSettings.UseBatches);
             Preferences.Set(SettingsKeys.WebServicePath, userSettings.WebServicePath);
@@ -104,6 +125,7 @@ namespace BarcodeScanner.Backbone
         /// </summary>
         public static void ResetSettingsToDefaults()
         {
+            //this function will clear all the preset preferences causing a hard reset
             Preferences.Clear();
         }
         #endregion

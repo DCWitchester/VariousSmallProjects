@@ -1,0 +1,22 @@
+﻿@inject IJSRuntime JSRuntime
+
+<h1>Login</h1>
+<div>
+    <!--The Main EditForm for the Login-->
+    <EditForm EditContext="editContext">
+        <!--The DataAnnotationsValidator binds the page to the object errors-->
+        <DataAnnotationsValidator/>
+        <!--Then we add the elements-->
+        <!--The Div containing the Label, Input Text and ValidationMessage for the Username-->
+        <div class="form-group">
+            <!--The Label Display for the Login Info-->
+            <label class="col-form-label">Scanati Cardul RFID sau introduceti Codul de Ospatar</label>
+            <!--The Main Input Box for the Login Info-->
+            <div>
+                <InputText type="text" id="tbWaiterCode" class="form-control" placeholder="Cod Ospatar" @bind-Value="PageController.WaiterCode"  />
+                <!--The Validation Message bound to the specific error-->
+                <ValidationMessage For="@(()=>PageController.IsWaiterValid)" />
+            </div>
+        </div>
+    </EditForm>
+</div>

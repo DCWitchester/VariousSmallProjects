@@ -76,29 +76,43 @@ namespace BarcodeScanner.Backbone
             get => products;
             set => products = value;
         }
-
+        /// <summary>
+        /// the default settings
+        /// </summary>
         public static PublicSettings DefaultSettings
         {
             get => defaultSettings;
             set => defaultSettings = value;
         }
 
+        /// <summary>
+        /// the user specific settings
+        /// </summary>
         public static PublicSettings PublicSettings
         {
             get => userSettings;
             set => userSettings = value;
         }
 
+        /// <summary>
+        /// the base entry document
+        /// </summary>
         public EntryDocument EntryDocument 
         { 
             get => entryDocument; 
             set => entryDocument = value; 
         }
 
+        /// <summary>
+        /// the serialized qunatities file used for calling the webService
+        /// </summary>
         public String GetQuantitiesJsonFile => JsonConvert.SerializeObject(new Quantities(this.EntryDocument, this.Products.ToList()));
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// the base constructor without parameters
+        /// </summary>
         public BarcodeScannerController() 
         {
             barcode = new ObjectClasses.Barcode();
@@ -106,6 +120,10 @@ namespace BarcodeScanner.Backbone
             GetUserSettings();
         }
 
+        /// <summary>
+        /// the base constructor with the INavigation received from the parent page
+        /// </summary>
+        /// <param name="navigation">the inavigation</param>
         public BarcodeScannerController(INavigation navigation)
         {
             barcode = new ObjectClasses.Barcode();
@@ -121,10 +139,10 @@ namespace BarcodeScanner.Backbone
         /// </summary>
         public static void GetUserSettings()
         {
-            userSettings.AdminControl = Preferences.Get(SettingsKeys.AdminControl, defaultValue: defaultSettings.AdminControl);
+            userSettings.AdminControl   = Preferences.Get(SettingsKeys.AdminControl, defaultValue: defaultSettings.AdminControl);
             userSettings.WebServicePath = Preferences.Get(SettingsKeys.WebServicePath, defaultValue: defaultSettings.WebServicePath);
-            userSettings.UseBatches = Preferences.Get(SettingsKeys.UseBatches, defaultValue: defaultSettings.UseBatches);
-            userSettings.UserBundle = Preferences.Get(SettingsKeys.UserBundle, defaultValue: defaultSettings.UserBundle);
+            userSettings.UseBatches     = Preferences.Get(SettingsKeys.UseBatches, defaultValue: defaultSettings.UseBatches);
+            userSettings.UserBundle     = Preferences.Get(SettingsKeys.UserBundle, defaultValue: defaultSettings.UserBundle);
         }
 
         /// <summary>
@@ -146,10 +164,16 @@ namespace BarcodeScanner.Backbone
             Preferences.Clear();
         }
 
+        /// <summary>
+        /// this function will reset the instance controller to its original state
+        /// </summary>
         public void ResetInstanceElements()
         {
+            //the new initialization of the barcode element
             barcode = new Barcode();
+            //we clear the products list
             products.Clear();
+            //we initialize a new entry document
             entryDocument = new EntryDocument();
         }
         #endregion

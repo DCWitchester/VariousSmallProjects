@@ -1,0 +1,20 @@
+﻿1. Page Navigation
+
+One of the first things to understand about page navigation within xamarin is that the pages are actually placed within a display stack.
+The stack is called with push and pop, the page on top always beiing the one displayed.
+The stack doesn't exist as default it beiing created by the initialization of the first NavigationPage()
+!VERY IMPORTANT => Each NavigationPage creates and can access its own stack so just the main page should be a navigation page
+The important thing to not forget is to pass the INavigation from the main page to the children
+In this project this is done by the use of the controller which i have found to be a good practice for general use within most applications
+In the latest version of .Net Standard you can also use modal navigation but the latest version causes problems with the barcode scanner
+For more info use this documentation:
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/hierarchical
+
+
+2. Xamarin Essentials
+
+On newer android versions it is a pain in the behind to create settings files to be able to save and alter user-specific settings
+So because obtaining permisions for the creation of files would take too much effort I have implemented what I considered at that time to be the better option
+Xamarin Essential permits me to create permission keys within the app cookies directly in android.
+For more info use this documentation: 
+https://docs.microsoft.com/en-us/xamarin/essentials/preferences?context=xamarin%2Fxamarin-forms&tabs=android

@@ -46,3 +46,4 @@ F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\bin\Sys
 F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\obj\Debug\WebServiceEvidenta.csproj.CopyComplete
 F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\obj\Debug\WebServiceEvidenta.dll
 F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\obj\Debug\WebServiceEvidenta.pdb
+F:\VariousProjects\VariousSmallProjects\WebServiceEvidenta\WebServicePOS\obj\Debug\WebServiceEvidenta.csprojAssemblyReference.cache

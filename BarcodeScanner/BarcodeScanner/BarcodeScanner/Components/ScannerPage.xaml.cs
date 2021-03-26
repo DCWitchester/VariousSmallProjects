@@ -47,9 +47,16 @@ namespace BarcodeScanner.Components
         #region Button Events
 
 #pragma warning disable IDE1006 // Naming Styles
+        /// <summary>
+        /// this function is called by th zxing scanner upon obtaining a valid result
+        /// </summary>
+        /// <param name="result">the calid result</param>
         public void scanView_OnScanResult(Result result)
         {
+            //we stop scanning temporarily
             scanView.IsScanning = false;
+            //the call the get quantity function in the main thread.
+            //all ui elements need to be displayed in the main thread in order to be visible
             Device.BeginInvokeOnMainThread(async () => await GetQuantity(result));
         }
 #pragma warning restore IDE1006 // Naming Styles
@@ -61,15 +68,19 @@ namespace BarcodeScanner.Components
         /// <returns>the current Task</returns>
         private async Task GetQuantity(Result result)
         {
+            //we call the display prompt async in order to request the quantity from the user
             String quantity = await DisplayPromptAsync("Cantitate", "Introduceti cantitatea:", keyboard: Keyboard.Numeric);
+            //we then initialize the lot and date string to empty values
             String lot = String.Empty;
             String date = String.Empty;
+            //then we check the settings to see if they use batches or not
             if (Backbone.BarcodeScannerController.PublicSettings.UseBatches)
             {
+                //we request the batch and its date directly from the user
                 lot = await DisplayPromptAsync("Cantitate", "Introduceti lotul:", keyboard: Keyboard.Default);
                 date = await DisplayPromptAsync("Cantitate", "Introduceti data (zz.ll.aaaa) lotului:", keyboard: Keyboard.Default);
             }
-
+            //then we add a newly instantiated product object to the list
             instanceController.Products.Add(new ObjectClasses.Products
             {
                 ID = instanceController.Products.Count + 1,
@@ -79,7 +90,9 @@ namespace BarcodeScanner.Components
                 ProductBatch = lot,
                 ProductBatchDate = Regex.Replace(date,"[^0-9.]","")
             });
+            //and reactivate the scan
             scanView.IsScanning = true;
+            //before leaving the page
             await instanceController.PageNavigation.PopAsync(Animation.IsEnabled);
         }
 

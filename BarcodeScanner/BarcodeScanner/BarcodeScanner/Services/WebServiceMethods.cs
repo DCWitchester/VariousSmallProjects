@@ -60,7 +60,7 @@ namespace BarcodeScanner.Services
         }
 
         /// <summary>
-        /// this function will function to send the product qunatities file
+        /// this function will send the product qunatities file to the webService
         /// </summary>
         /// <param name="products">the given products list</param>
         public static void SendProductQunatitites(String json)
@@ -69,6 +69,11 @@ namespace BarcodeScanner.Services
             httpClient.GetAsync(WebMethods.SetProductQuantity + json);
         }
 
+        /// <summary>
+        /// this function will retrieve the product info for a specific product code
+        /// </summary>
+        /// <param name="productCode">the given product code</param>
+        /// <returns>the product stock display structure</returns>
         public static ProductStockDisplay GetProductInfo(String productCode)
         {
             HttpClient http = new HttpClient();
@@ -82,6 +87,10 @@ namespace BarcodeScanner.Services
         #endregion
 
         #region List Functions 
+        /// <summary>
+        /// this function will return an observable collection of partners in order to display them
+        /// </summary>
+        /// <returns>the partners observable collection</returns>
         public static ObservableCollection<XmlClasses.PartnerDisplay> GetPartnersDisplay()
         {
             HttpClient http = new HttpClient();
@@ -94,6 +103,10 @@ namespace BarcodeScanner.Services
             
         }
 
+        /// <summary>
+        /// this function will return an observable collection of management units in order to display them
+        /// </summary>
+        /// <returns>the management units observable collection</returns>
         public static ObservableCollection<XmlClasses.ManagementUnit> GetManagementUnitsDisplay()
         {
             HttpClient http = new HttpClient();
@@ -167,6 +180,11 @@ namespace BarcodeScanner.Services
             return partner.PartnerName;
         }
 
+        /// <summary>
+        /// this function will deserialize the product stock display document from the xml document
+        /// </summary>
+        /// <param name="xmlDocument">the given xml document</param>
+        /// <returns>the deserialized object</returns>
         private static ProductStockDisplay DeserializeProductStockDisplayDocument(String xmlDocument)
         {
             //we initialize a serializer over the menu object
@@ -182,7 +200,11 @@ namespace BarcodeScanner.Services
         #endregion
 
         #region List Functions
-
+        /// <summary>
+        /// this function will deserialize the partner display into an observable collection of partner displays
+        /// </summary>
+        /// <param name="xmlDocument">the given xml document</param>
+        /// <returns>the observable collection of partner displays</returns>
         private static ObservableCollection<XmlClasses.PartnerDisplay> DeserializePartnersDisplayDocument(String xmlDocument)
         {
             //we initialize a serializer over the menu object
@@ -198,6 +220,11 @@ namespace BarcodeScanner.Services
             return partners;
         }
 
+        /// <summary>
+        /// this function will desetialize the management unit display into an observable collection of management units
+        /// </summary>
+        /// <param name="xmlDocument">the given xml document</param>
+        /// <returns>the observable collection</returns>
         private static ObservableCollection<XmlClasses.ManagementUnit> DeserializeManagementUnitsDisplayDocument(String xmlDocument)
         {
             //we initialize a serializer over the menu object

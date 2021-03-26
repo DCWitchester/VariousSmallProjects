@@ -13,91 +13,91 @@ namespace POSTable.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "D:\PosTable\POSTable\_Imports.razor"
+#line 1 "F:\VariousProjects\VariousSmallProjects\POSTable\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\PosTable\POSTable\_Imports.razor"
+#line 2 "F:\VariousProjects\VariousSmallProjects\POSTable\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\PosTable\POSTable\_Imports.razor"
+#line 3 "F:\VariousProjects\VariousSmallProjects\POSTable\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\PosTable\POSTable\_Imports.razor"
+#line 4 "F:\VariousProjects\VariousSmallProjects\POSTable\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\PosTable\POSTable\_Imports.razor"
+#line 5 "F:\VariousProjects\VariousSmallProjects\POSTable\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\PosTable\POSTable\_Imports.razor"
+#line 6 "F:\VariousProjects\VariousSmallProjects\POSTable\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\PosTable\POSTable\_Imports.razor"
+#line 7 "F:\VariousProjects\VariousSmallProjects\POSTable\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\PosTable\POSTable\_Imports.razor"
+#line 8 "F:\VariousProjects\VariousSmallProjects\POSTable\_Imports.razor"
 using POSTable;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\PosTable\POSTable\_Imports.razor"
+#line 9 "F:\VariousProjects\VariousSmallProjects\POSTable\_Imports.razor"
 using POSTable.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\PosTable\POSTable\Pages\TableMenu.razor"
+#line 8 "F:\VariousProjects\VariousSmallProjects\POSTable\Pages\TableMenu.razor"
 using POSTable.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\PosTable\POSTable\Pages\TableMenu.razor"
+#line 9 "F:\VariousProjects\VariousSmallProjects\POSTable\Pages\TableMenu.razor"
 using System.Xml.Serialization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\PosTable\POSTable\Pages\TableMenu.razor"
+#line 10 "F:\VariousProjects\VariousSmallProjects\POSTable\Pages\TableMenu.razor"
 using System.IO;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "D:\PosTable\POSTable\Pages\TableMenu.razor"
+#line 11 "F:\VariousProjects\VariousSmallProjects\POSTable\Pages\TableMenu.razor"
 using System.Net;
 
 #line default
@@ -114,7 +114,7 @@ using System.Net;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 229 "D:\PosTable\POSTable\Pages\TableMenu.razor"
+#line 230 "F:\VariousProjects\VariousSmallProjects\POSTable\Pages\TableMenu.razor"
        
     //The initialization of the page parameters
     /// <summary>
@@ -150,6 +150,10 @@ using System.Net;
     /// </summary>
     private ObjectStructures.Menu sale = new ObjectStructures.Menu();
 
+    /// <summary>
+    /// this function will be called by the initialization of the async function
+    /// </summary>
+    /// <returns>the initialization of the task</returns>
     protected override async Task OnInitializedAsync()
     {
         //we initialize a string for containing the retrieved xmlDocuments
@@ -192,6 +196,11 @@ using System.Net;
         menu.InitializeMenuFromServer(meniu);
     }
 
+    /// <summary>
+    /// this function will deserialize the base categories retrieved from the webService
+    /// </summary>
+    /// <param name="xmlDocumentAdministrations"></param>
+    /// <param name="xmlDocumentCategories"></param>
     private void DeserializeCategories(String xmlDocumentAdministrations, String xmlDocumentCategories)
     {
         XmlSerializer administrationsSerializer = new XmlSerializer(typeof(XmlClasses.Administrations));
@@ -344,14 +353,25 @@ using System.Net;
         myNavigationManager.NavigateTo("/endmessage");
     }
 
+    /// <summary>
+    /// this function will display the category sub-elements
+    /// </summary>
+    /// <param name="e">the mouse event on the div element</param>
+    /// <param name="categoryCode">the category code passed from the category code</param>
     private void DisplayCategory(MouseEventArgs e, Int32 categoryCode)
     {
+        //the menu categories retrieved from the complete categories list
         ObjectStructures.MenuCategory menuCategory = menu.menuCategories.Where(x => x.CategoryCode == categoryCode).FirstOrDefault();
+        //we open the menu category
         menuCategory.IsOpened = !menuCategory.IsOpened;
     }
 
+    /// <summary>
+    /// this function will check the sale element and add it to the command
+    /// </summary>
     private void CheckSale()
     {
+        //this function will set the check sale
         checkSale = !checkSale;
         if (!checkSale) checkSaleDisplay = "Vizualizare Comanda";
         else checkSaleDisplay = "Inapoi la selectie";

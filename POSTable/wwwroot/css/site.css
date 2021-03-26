@@ -1,5 +1,18 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+/*#region Simple Display Settings*/
+.center-screen{
+    width:50%;
+    height:50%;
+    left:50%;
+    top:50%;
+    position:absolute;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+
+}
+/*#endregion*/
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

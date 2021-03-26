@@ -20,10 +20,7 @@ namespace POSTable
         {
             //the configuration consumes the appsettings.json
             Configuration = configuration;
-            //the we retrieve the settings from the configuration
-            Settings.PublicSettings.WebServicePath = Configuration["PublicSettings:WebServicePath"];
-            Settings.PublicSettings.DisplayMode = (Settings.DisplayMode)Convert.ToInt32(Configuration["PublicSettings:Mode"]);
-            Settings.PublicSettings.Currency = (Settings.Currency)Convert.ToInt32(Configuration["PublicSettings:Moneda"]);
+            Settings.PublicSettings.ReadSetting(Configuration);
         }
 
         public IConfiguration Configuration { get; }
@@ -35,6 +32,8 @@ namespace POSTable
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+
+            services.AddTransient<Services.TimerService>();
 
             // Server Side Blazor doesn't register HttpClient by default
             if (!services.Any(x => x.ServiceType == typeof(HttpClient)))
@@ -77,5 +76,6 @@ namespace POSTable
                 endpoints.MapFallbackToPage("/_Host");
             });
         }
+
     }
 }

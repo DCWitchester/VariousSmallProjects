@@ -244,7 +244,7 @@
                                       HeightRequest="50"
                                       x:Name="chbIsNotice"/>
                         </StackLayout>
-                        <Button x:Name="btnUseBatches" BackgroundColor="Transparent" Clicked="CheckIsNotice"/>
+                        <Button x:Name="btnCheckNotice" BackgroundColor="Transparent" Clicked="CheckIsNotice"/>
                     </Grid>
                     <!--#endregion-->
                     

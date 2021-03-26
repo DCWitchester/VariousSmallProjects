@@ -16,13 +16,12 @@
 <!--The NavigationManager is used for changing pages-->
 @inject NavigationManager myNavigationManager
 <!--The link is used for accessing special styles-->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
 <!--The forms title-->
-<h1 style="font-family:'Script MT'">Meniu</h1>
+<h1 style="font-family: 'Brush Script MT' ">Meniu</h1>
 <br />
 <!--And the forms subtitle displaying the active table-->
-<h2 style="font-family:'Script MT'">Masa @table</h2>
+<h2 style="font-family: 'Brush Script MT' ">Masa @table</h2>
 <br />
 
 <!--The main Style for the Page-->
@@ -43,6 +42,7 @@
     <!--menu.menuCategories.OrderBy(x => x.AdministrationOrder).ThenBy(x => x.CategoryOrder)-->
     @foreach (var categoryElement in menu.menuCategories.OrderBy(x => x.CategoryOrder))
     {
+        <!--The base div element for the Group Display-->
         <div style="margin:2px; color:black; background-color:white; display:flex;
                         background: @(categoryElement.IsOpened ? "#66b3ff" : "rgb(255, 255, 255) transparent")"
                 @onclick="@(e => DisplayCategory(e, categoryElement.CategoryCode))">
@@ -100,17 +100,16 @@
                             </div>
                             <!--We set a special class div to access special styles within the div-->
                             <!--This div is an object containing two spans with special buttons for adding and substracting quantities-->
-                            <div class="qty">
+                            <div>
                                 <!--the substraction span-->
-                                <span class="minus bg-dark"
-                                        @onclick="@(e => AlterQuantity(e, selectedElement.ProductCode, QuantityEvents.substract))">-</span>
+                                <i class="fas fa-minus-circle fa-lg" @onclick:stopPropagation="true" @onclick="@(e => AlterQuantity(e, selectedElement.ProductCode, QuantityEvents.substract))" />
                                 <!--the label displaying the quantity-->
+
                                 <label style="margin-left:10px; margin-right:10px">
                                     @selectedElement.ProductQuantity
                                 </label>
                                 <!--the addition span-->
-                                <span class="plus bg-dark"
-                                        @onclick="@(e => AlterQuantity(e, selectedElement.ProductCode, QuantityEvents.add))">+</span>
+                                <i class="fas fa-plus-circle fa-lg" @onclick:stopPropagation="true" @onclick="@(e => AlterQuantity(e, selectedElement.ProductCode, QuantityEvents.add))"></i>
                             </div>
                         </div>
                     </div>
@@ -161,17 +160,15 @@
                             </div>
                             <!--We set a special class div to access special styles within the div-->
                             <!--This div is an object containing two spans with special buttons for adding and substracting quantities-->
-                            <div class="qty">
+                            <div>
                                 <!--the substraction span-->
-                                <span class="minus bg-dark"
-                                        @onclick="@(e => AlterQuantity(e, element.ProductCode, QuantityEvents.substract))">-</span>
+                                <i class="fas fa-minus-circle fa-lg" @onclick:stopPropagation="true" @onclick="@(e => AlterQuantity(e, element.ProductCode, QuantityEvents.substract))" />
                                 <!--the label displaying the quantity-->
                                 <label style="margin-left:10px; margin-right:10px">
                                     @element.ProductQuantity
                                 </label>
                                 <!--the addition span-->
-                                <span class="plus bg-dark"
-                                        @onclick="@(e => AlterQuantity(e, element.ProductCode, QuantityEvents.add))">+</span>
+                                <i class="fas fa-plus-circle fa-lg" @onclick:stopPropagation="true"  @onclick="@(e => AlterQuantity(e, element.ProductCode, QuantityEvents.add))" />
                             </div>
                         </div>
                     </div>
@@ -186,28 +183,28 @@ else
         @foreach (var element in menu.itemList.Where(x => x.ProductQuantity > 0))
         {
             <div style="display:flex">
-                <div style="width:50%; float:left; text-align: left">
+                <div style="width:50%; font-weight: bold; float:left; text-align: left">
                     @element.ProductName
                 </div>
-                <div style="width:10%; float:left; text-align: left">
+                <div style="width:10%; font-weight: bold; float:left; text-align: left">
                     @element.ProductQuantity BUC
                 </div>
-                <div style="width:5%; float:left;">
+                <div style="width:5%; font-weight: bold; float:left;">
                     X
                 </div>
-                <div style="width:10%; float:left; text-align: right">
+                <div style="width:10%; font-weight: bold; float:left; text-align: right">
                     @(element.ProductPrice.ToString("0.00"))
                 </div>
-                <div style="width:5%; float:left;">
+                <div style="width:5%; font-weight: bold; float:left;">
                     =
                 </div>
-                <div style="width:20%; float:right; text-align: right">
+                <div style="width:20%; font-weight: bold; float:right; text-align: right">
                     @((element.ProductQuantity * element.ProductPrice).ToString("0.00")) @Miscellaneous.SetCurrency()
                 </div>
                 <br/>
             </div>
         }
-        <div style=" width:100%; border-top: 2px solid black; float:right; text-align: right; margin-top:25px; margin-bottom:40px">
+        <div style=" width:100%; font-weight: bold; border-top: 2px solid black; float:right; text-align: right; margin-top:25px; margin-bottom:40px">
             Total : @(menu.itemList.Where(x => x.ProductQuantity > 0).Sum(x => x.ProductQuantity * x.ProductPrice).ToString("0.00")) @Miscellaneous.SetCurrency()
         </div>
     </div>
@@ -261,6 +258,10 @@ else
     /// </summary>
     private ObjectStructures.Menu sale = new ObjectStructures.Menu();
 
+    /// <summary>
+    /// this function will be called by the initialization of the async function
+    /// </summary>
+    /// <returns>the initialization of the task</returns>
     protected override async Task OnInitializedAsync()
     {
         //we initialize a string for containing the retrieved xmlDocuments
@@ -303,6 +304,11 @@ else
         menu.InitializeMenuFromServer(meniu);
     }
 
+    /// <summary>
+    /// this function will deserialize the base categories retrieved from the webService
+    /// </summary>
+    /// <param name="xmlDocumentAdministrations"></param>
+    /// <param name="xmlDocumentCategories"></param>
     private void DeserializeCategories(String xmlDocumentAdministrations, String xmlDocumentCategories)
     {
         XmlSerializer administrationsSerializer = new XmlSerializer(typeof(XmlClasses.Administrations));
@@ -455,14 +461,25 @@ else
         myNavigationManager.NavigateTo("/endmessage");
     }
 
+    /// <summary>
+    /// this function will display the category sub-elements
+    /// </summary>
+    /// <param name="e">the mouse event on the div element</param>
+    /// <param name="categoryCode">the category code passed from the category code</param>
     private void DisplayCategory(MouseEventArgs e, Int32 categoryCode)
     {
+        //the menu categories retrieved from the complete categories list
         ObjectStructures.MenuCategory menuCategory = menu.menuCategories.Where(x => x.CategoryCode == categoryCode).FirstOrDefault();
+        //we open the menu category
         menuCategory.IsOpened = !menuCategory.IsOpened;
     }
 
+    /// <summary>
+    /// this function will check the sale element and add it to the command
+    /// </summary>
     private void CheckSale()
     {
+        //this function will set the check sale
         checkSale = !checkSale;
         if (!checkSale) checkSaleDisplay = "Vizualizare Comanda";
         else checkSaleDisplay = "Inapoi la selectie";

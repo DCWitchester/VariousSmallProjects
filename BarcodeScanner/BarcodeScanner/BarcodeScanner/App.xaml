@@ -4,18 +4,19 @@
              x:Class="BarcodeScanner.App">
     <Application.Resources>
         <ResourceDictionary>
+            <!--The redirects for the FontAwesome Platform-Dependent (Brands)-->
             <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
                 <On Platform="Android" Value="FontAwesome5Brands.otf#Regular" />
                 <On Platform="iOS" Value="FontAwesome5Brands-Regular" />
                 <On Platform="UWP" Value="/Assets/FontAwesome5Brands.otf#Font Awesome 5 Brands" />
             </OnPlatform>
-
+            <!--The redirects for the FontAwesome Platform-Dependent (Solid) => used with a free key -->
             <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeSolid">
                 <On Platform="Android" Value="FontAwesome5Solid.otf#Regular" />
                 <On Platform="iOS" Value="FontAwesome5Free-Solid" />
                 <On Platform="UWP" Value="/Assets/FontAwesome5Solid.otf#Font Awesome 5 Free" />
             </OnPlatform>
-
+            <!--The redirects for the FontAwesome Platform-Dependent (Regular) => used with a free key-->
             <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeRegular">
                 <On Platform="Android" Value="FontAwesome5Regular.otf#Regular" />
                 <On Platform="iOS" Value="FontAwesome5Free-Regular" />
