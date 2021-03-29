@@ -21,7 +21,7 @@ namespace POSTable.WaiterApp.Controllers
         /// <summary>
         /// the check for the Validity of the waiter
         /// </summary>
-        protected Boolean? isWaiterValid { get; set; }
+        protected Boolean? isWaiterValid { get; set; } = true;
 #pragma warning restore IDE1006 // Naming Styles
         #endregion
 

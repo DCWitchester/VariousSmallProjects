@@ -86,9 +86,22 @@ namespace POSTable.WaiterApp.Controllers
 
         /// <summary>
         /// this function will select the selected Table by the given ID
+        /// <para/>
+        /// *DEPRECATED*
         /// </summary>
         /// <param name="tableId">the given ID</param>
         public void SelectTable(Int32 tableId) => selectedTable = tables.Where(element => element.ID == tableId).FirstOrDefault();
+
+        public Table SelectedTable
+        {
+            get => selectedTable;
+            set => selectedTable = value;
+        }
+
+        /// <summary>
+        /// this function will check the status of the tables existance
+        /// </summary>
+        public Boolean TablesCheck => (tables != null) && (tables.Count > 0);
         #endregion
 
         /// <summary>

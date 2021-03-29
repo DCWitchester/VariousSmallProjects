@@ -32,6 +32,7 @@ F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\RazorDeclarati
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\RazorDeclaration\WaiterApp\Pages\WaiterLogin.razor.g.cs
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\RazorDeclaration\WaiterApp\Pages\WaiterPage.razor.g.cs
+F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\RazorDeclaration\WaiterApp\Pages\WaiterTables.razor.g.cs
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\POSTable.RazorComponent.output.cache
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\RazorDeclaration\POSTable.dll
@@ -50,6 +51,7 @@ F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\Razor\Shared\M
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\Razor\WaiterApp\Pages\WaiterLogin.razor.g.cs
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\Razor\WaiterApp\Pages\WaiterPage.razor.g.cs
+F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\Razor\WaiterApp\Pages\WaiterTables.razor.g.cs
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\Razor\Pages\_Host.cshtml.g.cs
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\POSTable.RazorAssemblyInfo.cache
@@ -66,5 +68,3 @@ F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\ref\POSTable.d
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\POSTable.pdb
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\POSTable.genruntimeconfig.cache
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\POSTable.csprojAssemblyReference.cache
-F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\RazorDeclaration\WaiterApp\Pages\WaiterTables.razor.g.cs
-F:\VariousProjects\VariousSmallProjects\POSTable\obj\Debug\net5.0\Razor\WaiterApp\Pages\WaiterTables.razor.g.cs

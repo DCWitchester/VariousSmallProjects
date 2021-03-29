@@ -13,6 +13,55 @@
 }
 /*#endregion*/
 
+/*#region Table Display*/
+
+.container {
+    display: flex;
+    display: -ms-flexbox;
+    -ms-flex-wrap : wrap;
+    flex-wrap: wrap;
+    width:100%;
+}
+
+.square {
+    background-color: white;
+    display: block;
+    /*border: 3px solid green;*/
+    position: relative;
+    margin: 5px;
+}
+
+    .square:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+.square-small {
+    width: 7%;
+}
+
+.square-medium {
+    width: 15%;
+}
+
+.square-large {
+    width: 24%;
+}
+
+.text {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/*#endregion*/
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

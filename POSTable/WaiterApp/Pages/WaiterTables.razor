@@ -1,2 +1,27 @@
 ﻿@inject Services.TimerService tableTimer;
-@inject HttpClient httpClient;  
+@inject HttpClient httpClient;
+
+@if (WaiterController.TablesCheck)
+{
+    <div class="container">
+        @foreach (POSTable.ObjectStructures.Table table in WaiterController.Tables)
+        {
+
+            <div class="square square-medium" style="background-color : @Miscellaneous.GetColorOfStatus(table.Status)" @onclick="(e=>SelectTable(table))">
+                <div class="text">
+                    <div class="col-sm-12">
+                        <b> @table.ID.ToString() </b>
+                        @if (table.ActiveWaiter.ID != -1)
+                        {
+                            <br />
+                            <label style="font-size:small">
+                                @table.ActiveWaiter.WaiterName
+                            </label>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+}

@@ -13,7 +13,7 @@
             <label class="col-form-label">Scanati Cardul RFID sau introduceti Codul de Ospatar</label>
             <!--The Main Input Box for the Login Info-->
             <div>
-                <InputText type="text" id="tbWaiterCode" class="form-control" placeholder="Cod Ospatar" @bind-Value="PageController.WaiterCode"  />
+                <InputText type="password" id="tbWaiterCode" class="form-control" placeholder="Cod Ospatar" @bind-Value="PageController.WaiterCode"  />
                 <!--The Validation Message bound to the specific error-->
                 <ValidationMessage For="@(()=>PageController.IsWaiterValid)" />
             </div>

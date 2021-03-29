@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static POSTable.ObjectStructures.Enumerators.Enumerators;
 
 namespace POSTable
 {
@@ -58,6 +59,25 @@ namespace POSTable
         public static Double GetMillisecondOfSeconds(Double seconds)
         {
             return TimeSpan.FromSeconds(seconds).TotalMilliseconds;
+        }
+
+        /// <summary>
+        /// this function will return the color code for the table based on its status
+        /// </summary>
+        /// <param name="status">the table status</param>
+        /// <returns>the tables color code</returns>
+        public static String GetColorOfStatus(Status status)
+        {
+            return status switch
+            {
+                Status.open => "#f2f2f2",
+                Status.inUse => "#e23636",
+                Status.inUseByClient => "#f4a125",
+                Status.activeOrder => "#66b3ff",
+                Status.beingCooked => "#fafa38",
+                Status.isFinished => "#5cd65c",
+                _ => "white"
+            };
         }
     }
 }
