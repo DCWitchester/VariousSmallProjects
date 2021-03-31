@@ -1,0 +1,48 @@
+﻿<!--We will also inject two global services so that we can access them-->
+<!--The HttpClient is used for accessing the WebService-->
+@inject HttpClient http
+<!--The NavigationManager is used for changing pages-->
+@inject NavigationManager myNavigationManager
+<!--The link is used for accessing special styles-->
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+<!--The forms title-->
+<h1 style="font-family: 'Brush Script MT' ">Meniu</h1>
+<br />
+<!--And the forms subtitle displaying the active table-->
+<h2 style="font-family: 'Brush Script MT' ">Masa @WaiterController.SelectedTable.ID.ToString()</h2>
+<br />
+
+<div style="width:100%; margin-bottom:20px">
+    @foreach (var element in WaiterController.WaiterMenu.SaleItems)
+    {
+        <div style="display:flex">
+            <div style="width:50%; font-weight: bold; float:left; text-align: left">
+                @element.ProductName
+            </div>
+            <div style="width:10%; font-weight: bold; float:left; text-align: left">
+                @element.ProductQuantity BUC
+            </div>
+            <div style="width:5%; font-weight: bold; float:left;">
+                X
+            </div>
+            <div style="width:10%; font-weight: bold; float:left; text-align: right">
+                @(element.ProductPrice.ToString("0.00"))
+            </div>
+            <div style="width:5%; font-weight: bold; float:left;">
+                =
+            </div>
+            <div style="width:20%; font-weight: bold; float:right; text-align: right">
+                @((element.ProductQuantity * element.ProductPrice).ToString("0.00")) @Miscellaneous.SetCurrency()
+            </div>
+            <br />
+        </div>
+    }
+    <div style=" width:100%; font-weight: bold; border-top: 2px solid black; float:right; text-align: right; margin-top:25px; margin-bottom:40px">
+        Total : @(WaiterController.WaiterMenu.SaleItems.Sum(x => x.ProductQuantity * x.ProductPrice).ToString("0.00")) @Miscellaneous.SetCurrency()
+    </div>
+</div>
+<br />
+<button class="btn btn-mentor" @onclick="CreateSale">Finalizare Comanda</button>
+<!--The form has two layouts for reseting the active command and for finalizing the command-->
+<button class="btn btn-mentor" @onclick="ResetSelection">Resetare Comanda</button>
+<button class="btn btn-mentor" @onclick="ReturnToValidation">Inapoi la selectie</button>

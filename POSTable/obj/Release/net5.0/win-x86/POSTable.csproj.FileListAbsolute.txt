@@ -413,3 +413,13 @@ F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\POST
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\ref\POSTable.dll
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\POSTable.pdb
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\POSTable.genruntimeconfig.cache
+F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\RazorDeclaration\WaiterApp\Pages\WaiterCommand.razor.g.cs
+F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\RazorDeclaration\WaiterApp\Pages\WaiterLogin.razor.g.cs
+F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\RazorDeclaration\WaiterApp\Pages\WaiterMenu.razor.g.cs
+F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\RazorDeclaration\WaiterApp\Pages\WaiterPage.razor.g.cs
+F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\RazorDeclaration\WaiterApp\Pages\WaiterTables.razor.g.cs
+F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\Razor\WaiterApp\Pages\WaiterCommand.razor.g.cs
+F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\Razor\WaiterApp\Pages\WaiterLogin.razor.g.cs
+F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\Razor\WaiterApp\Pages\WaiterMenu.razor.g.cs
+F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\Razor\WaiterApp\Pages\WaiterPage.razor.g.cs
+F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\Razor\WaiterApp\Pages\WaiterTables.razor.g.cs

@@ -1,18 +1,25 @@
 ﻿@inject Services.TimerService tableTimer;
 @inject HttpClient httpClient;
 
+<!--The forms title-->
+<h1 style="font-family: 'Brush Script MT' ">Meniu</h1>
+
 @if (WaiterController.TablesCheck)
 {
+    <!--The Container DiV is used for flexing the aragement of the controls-->
     <div class="container">
+        <!--We iterate the tables retrieved from the server-->
         @foreach (POSTable.ObjectStructures.Table table in WaiterController.Tables)
         {
-
+            <!--Each Table is placed within a square div, set its background and bind it to the table selection event-->
             <div class="square square-medium" style="background-color : @Miscellaneous.GetColorOfStatus(table.Status)" @onclick="(e=>SelectTable(table))">
                 <div class="text">
                     <div class="col-sm-12">
+                        <!--The Table ID(RECNO)-->
                         <b> @table.ID.ToString() </b>
                         @if (table.ActiveWaiter.ID != -1)
                         {
+                            <!--If the Table is bound to an active waiter we also display the waiters name-->
                             <br />
                             <label style="font-size:small">
                                 @table.ActiveWaiter.WaiterName

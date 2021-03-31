@@ -114,7 +114,7 @@ using System.Net;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 228 "F:\VariousProjects\VariousSmallProjects\POSTable\Pages\TableMenu.razor"
+#line 226 "F:\VariousProjects\VariousSmallProjects\POSTable\Pages\TableMenu.razor"
        
     //The initialization of the page parameters
     /// <summary>

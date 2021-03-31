@@ -20,24 +20,42 @@
     }
 </style>
 
-<CascadingValue Value="PageController">
-    @switch (PageController.PageState)
-    {
-        case ObjectStructures.Enumerators.Enumerators.PageState.waitingForLogin:
-            {
-                <div class="center-screen">
-                    <WaiterLogin Waiter="PageController.Waiter" />
-                </div>
-                break;
-            }
-        case ObjectStructures.Enumerators.Enumerators.PageState.tableMenu:
-            {
-                <WaiterTables />
-                break;
-            }
-        case ObjectStructures.Enumerators.Enumerators.PageState.itemMenu:
-            {
-                break;
-            }
-    }
-</CascadingValue>
+<div>
+    <CascadingValue Value="PageController">
+        @switch (PageController.PageState)
+        {
+            case ObjectStructures.Enumerators.Enumerators.PageState.waitingForLogin:
+                {
+                    <div class="center-screen">
+                        <WaiterLogin Waiter="PageController.Waiter" />
+                        <br />
+                        <a href="http://www.mentorsoft.ro/" style="margin-top: 25px; font-size:10px">Program ©MentorTableMenu ™SC MENTOR SRL Constanta</a>
+                    </div>
+                    break;
+                }
+            case ObjectStructures.Enumerators.Enumerators.PageState.tableMenu:
+                {
+                    <WaiterTables />
+                    break;
+                }
+            case ObjectStructures.Enumerators.Enumerators.PageState.itemMenu:
+                {
+                    <WaiterMenu />
+                    break;
+                }
+            case ObjectStructures.Enumerators.Enumerators.PageState.validateCommand:
+                {
+                    <WaiterCommand />
+                    break;
+                }
+        }
+    </CascadingValue>
+</div>
+@if (PageController.PageState != ObjectStructures.Enumerators.Enumerators.PageState.waitingForLogin)
+{
+    <br />
+    <div>
+        <a href="http://www.mentorsoft.ro/" style="margin-top: 25px; font-size:10px">Program ©MentorTableMenu ™SC MENTOR SRL Constanta</a>
+    </div>
+}
+

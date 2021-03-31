@@ -23,6 +23,10 @@ namespace POSTable
         /// </summary>
         public static String GetIsTableOpen => Settings.PublicSettings.WebServicePath + "/GetIsTableOpen?table=";
         /// <summary>
+        /// this String will retrieve the getIsTableOpen WebService adress and prepare it for receiving the parameter
+        /// </summary>
+        public static String GetSaleOfTable => Settings.PublicSettings.WebServicePath + "/GetSaleOfTable?tableCode=";
+        /// <summary>
         /// this String will retrieve the getAdministrations WebService adress
         /// </summary>
         public static String GetAdministrations => Settings.PublicSettings.WebServicePath + "/GetAdministration";

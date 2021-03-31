@@ -1,4 +1,5 @@
-﻿using POSTable.ObjectStructures;
+﻿using Newtonsoft.Json;
+using POSTable.ObjectStructures;
 using POSTable.ObjectStructures.Enumerators;
 using System;
 using System.Collections.Generic;
@@ -105,6 +106,28 @@ namespace POSTable.WaiterApp.Controllers
         #endregion
 
         /// <summary>
+        /// this function creates an JSON String from the Sale
+        /// </summary>
+        /// <returns>the JSON Object</returns>
+        public String CreateSale()
+        {
+            XmlClasses.Sale sale = new();
+            sale.Vanzare = WaiterMenu.SaleItems.Select(element => new XmlClasses.SaleItem
+            {
+                ProductCode = element.ProductCode,
+                ProductName = element.ProductName,
+                ProductPrice = element.ProductPrice,
+                ProductQuantity = element.ProductQuantity,
+                Table = selectedTable.ID,
+                SaleClient = waiter.WaiterCode
+            }).ToList();
+            //then we serialize the object to the json
+            String json = JsonConvert.SerializeObject(sale);
+            return json;
+        }
+
+        #region Page Refresh
+        /// <summary>
         /// the onChange Action Caller => will contain the invocable action on the page refresh
         /// </summary>
         public event Action OnChange;
@@ -123,5 +146,6 @@ namespace POSTable.WaiterApp.Controllers
             this.pageState = pageState;
             NotifyStateChanged();
         }
+        #endregion
     }
 }

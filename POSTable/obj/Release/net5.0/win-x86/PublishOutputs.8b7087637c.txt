@@ -17,6 +17,7 @@ F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\PubT
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\PubTmp\Out\wwwroot\images\menu_background_night.jpg
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\PubTmp\Out\wwwroot\images\menu_background_picnic.jpg
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\PubTmp\Out\wwwroot\index.html
+F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\PubTmp\Out\wwwroot\javascripts\MiscellaneousFunctions.js
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\PubTmp\Out\appsettings.Development.json
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\PubTmp\Out\appsettings.json
 F:\VariousProjects\VariousSmallProjects\POSTable\obj\Release\net5.0\win-x86\PubTmp\Out\POSTable.dll

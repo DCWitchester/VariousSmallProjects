@@ -77,5 +77,14 @@ namespace POSTable.ObjectStructures.Enumerators
             /// </summary>
             validateCommand
         }
+
+        /// <summary>
+        /// the main enum is used for setting the quantity events: adding or subtracting one
+        /// </summary>
+        public enum QuantityEvents
+        {
+            add = 0,
+            substract = 1
+        }
     }
 }

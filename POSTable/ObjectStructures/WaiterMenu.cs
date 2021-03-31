@@ -108,26 +108,5 @@ namespace POSTable.ObjectStructures
             }).ToList();
         }
 
-        /// <summary>
-        /// this function creates an JSON String from the Sale
-        /// </summary>
-        /// <returns>the JSON Object</returns>
-        public String CreateSale()
-        {
-            XmlClasses.Sale sale = new();
-            sale.Vanzare = menuItems.Select(element => new XmlClasses.SaleItem { 
-                ProductCode = element.ProductCode,
-                ProductName = element.ProductName,
-                ProductPrice = element.ProductPrice,
-                ProductQuantity = element.ProductQuantity,
-                Table = Table.ID,
-                SaleClient = waiter.WaiterCode
-            }).ToList();
-            //then we serialize the object to the json
-            String json = JsonConvert.SerializeObject(sale);
-            return json;
-        }
-
-
     }
 }

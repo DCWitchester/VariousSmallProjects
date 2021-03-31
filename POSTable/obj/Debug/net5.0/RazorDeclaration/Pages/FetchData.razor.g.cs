@@ -96,11 +96,6 @@ using POSTable.Data;
     [Parameter]
     public Int32 table { get; set; }
 
-    protected override async Task OnInitializedAsync()
-    {
-
-    }
-
 #line default
 #line hidden
 #nullable disable
